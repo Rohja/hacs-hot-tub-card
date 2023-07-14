@@ -2,13 +2,26 @@ import { html, css, LitElement } from "lit";
 import { mdiChartBubble } from "@mdi/js";
 
 export class BlowerButton extends LitElement {
-  static get properties() {
-    return {
-      blowerState: { type: String, attribute: "blower-state" },
-    };
-  }
-
   static styles = css`
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      outline: 0.2em solid white;
+      width: 60%;
+      height: 60%;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      color: white;
+    }
     @keyframes bubble {
       0% {
         transform: scale(0) translateY(0);
@@ -24,23 +37,17 @@ export class BlowerButton extends LitElement {
         transform: scale(1.3) translateY(-2.2em);
       }
     }
-
-    .content {
-      border: 0.2em solid black;
-      border-radius: 50%;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-      width: 100%;
+    .bubbles {
       height: 100%;
+      width: 100%;
+      position: relative;
     }
-
     .bubble {
+      position: absolute;
       height: 1em;
       width: 1em;
-      background-color: black;
       border-radius: 50px;
-
-      position: absolute;
+      background-color: white;
     }
 
     /* FRST BUBBLE */
@@ -69,43 +76,17 @@ export class BlowerButton extends LitElement {
       animation: bubble 2.5s linear infinite;
       animation-delay: 2s;
     }
-    .bubble-static {
-      display: none;
-    }
   `;
 
-  constructor() {
-    // console.info("blower-button: contructor() called.");
-    super();
-    this.blowerState = "off";
-  }
-
   render() {
-    // console.log("blowerState:", this.blowerState);
     return html`
-      <div
-        class="content"
-        style="background-color:${this.blowerState == "on"
-          ? "var(--primary-color)"
-          : "transparent"}"
-      >
-        <div
-          class="bubble bubble-${this.blowerState == "on" ? "anim" : "static"}"
-        ></div>
-        <div
-          class="bubble bubble-${this.blowerState == "on" ? "anim" : "static"}"
-        ></div>
-        <div
-          class="bubble bubble-${this.blowerState == "on" ? "anim" : "static"}"
-        ></div>
-        <div style="display:${this.blowerState == "on" ? "none" : "block"}">
-          <mdi-icon
-            style="display:block;height:0"
-            icon-name="${mdiChartBubble}"
-            border=""
-            padding="0.2em"
-          >
-          </mdi-icon>
+      <div class="container">
+        <div class="wrapper">
+          <div class="bubbles">
+            <div class="bubble bubble-anim"></div>
+            <div class="bubble bubble-anim"></div>
+            <div class="bubble bubble-anim"></div>
+          </div>
         </div>
       </div>
     `;

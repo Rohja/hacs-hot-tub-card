@@ -170,9 +170,8 @@ export class HotTubCard extends LitElement {
                   lights-color="${this.rgbToHex(
                     this.light_entity_state.attributes?.rgb_color
                   )}"
-                  lights-brightness="${
-                    this.light_entity_state.attributes.brightness
-                  }"
+                  lights-brightness="${this.light_entity_state.attributes
+                    .brightness}"
                 ></hot-tub-icon>
               </long-press-element>
             </div>
@@ -193,13 +192,14 @@ export class HotTubCard extends LitElement {
                 action4-rotate-duration="0.5"
               >
                 <!-- <mdi-icon icon-name="${mdiChartBubble}"></mdi-icon> -->
-                <temperature-value-button slot="custom-button"></temperature-value-button>
+                <temperature-value-button
+                  slot="custom-button"
+                ></temperature-value-button>
               </action-button>
             </div>
             <div class="action action2" @click=${this.doTogglePump}>
-              <!-- <pump-button pump-state="${
-                this.pump_state
-              }"> </pump-button> -->
+              <!-- <pump-button pump-state="${this
+                .pump_state}"> </pump-button> -->
               <action-button
                 button-icon="${mdiFan}"
                 action1-icon="${mdiFan}"
@@ -211,11 +211,12 @@ export class HotTubCard extends LitElement {
                 action4-icon="${mdiChartBubble}"
                 action4-rotate="${true}"
                 action4-rotate-duration="0.5"
-              >
+              ></action-button>
             </div>
             <div class="action action3" @click=${this.doToggleBlower}>
-              <!-- <blower-button
+              <!-- <<blower-button
                 blower-state="${this.blower_state}"
+              ></blower-button>
               ></blower-button> -->
               <action-button
                 button-icon="${mdiFan}"
@@ -228,7 +229,11 @@ export class HotTubCard extends LitElement {
                 action4-icon="${mdiChartBubble}"
                 action4-rotate="${true}"
                 action4-rotate-duration="0.5"
-              >
+                ><blower-button
+                  blower-state="${this.blower_state}"
+                  slot="custom-button"
+                ></blower-button
+              ></action-button>
             </div>
             <div class="action action4">
               <!-- <extra-status-button
@@ -247,7 +252,7 @@ export class HotTubCard extends LitElement {
                 action4-icon="${mdiChartBubble}"
                 action4-rotate="${true}"
                 action4-rotate-duration="0.5"
-              >
+              ></action-button>
             </div>
           </div>
         </div>
