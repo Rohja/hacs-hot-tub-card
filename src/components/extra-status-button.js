@@ -27,7 +27,7 @@ export class ExtraStatusButton extends LitElement {
   `;
 
   constructor() {
-    console.info("extra-status-button: contructor() called.");
+    // console.info("extra-status-button: contructor() called.");
     super();
     this.heaterState = "off";
     this.filterState1 = "off";

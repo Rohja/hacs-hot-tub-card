@@ -75,13 +75,13 @@ export class BlowerButton extends LitElement {
   `;
 
   constructor() {
-    console.info("blower-button: contructor() called.");
+    // console.info("blower-button: contructor() called.");
     super();
     this.blowerState = "off";
   }
 
   render() {
-    console.log("blowerState:", this.blowerState);
+    // console.log("blowerState:", this.blowerState);
     return html`
       <div
         class="content"

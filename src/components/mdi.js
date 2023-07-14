@@ -34,7 +34,7 @@ export class MDIIcon extends LitElement {
   `;
 
   constructor() {
-    console.info("mdi-icon: contructor() called.");
+    // console.info("mdi-icon: contructor() called.");
     super();
     this.icon = mdiFileQuestionOutline;
     this.rotate = false;

@@ -19,7 +19,7 @@ export class HotTubIcon extends LitElement {
   }
 
   constructor() {
-    console.info("hot-tub-icon: contructor() called.");
+    // console.info("hot-tub-icon: contructor() called.");
     super();
     this.lightsState = "off";
     this.lightsColor = "#a87332";

@@ -28,7 +28,7 @@ export class PumpButton extends LitElement {
   `;
 
   constructor() {
-    console.info("pump-button: contructor() called.");
+    // console.info("pump-button: contructor() called.");
     super();
     this.pumpState = -1;
   }

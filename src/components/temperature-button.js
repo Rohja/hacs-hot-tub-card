@@ -43,7 +43,7 @@ export class TemnperatureButton extends LitElement {
   `;
 
   constructor() {
-    console.info("temperature-button: contructor() called.");
+    // console.info("temperature-button: contructor() called.");
     super();
     this.temperature = -42;
   }

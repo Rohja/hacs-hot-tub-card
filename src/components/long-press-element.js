@@ -33,7 +33,7 @@ export class LongPressElement extends LitElement {
   eventPrefix = "hot-tub-icon";
 
   connectedCallback() {
-    console.log("long-press-element: connectedCallback() called.");
+    // console.log("long-press-element: connectedCallback() called.");
     super.connectedCallback();
     this.addEventListener("pointerdown", this.#pointerDownHandler);
     this.addEventListener("pointerup", this.#longPressAbortHandler);
@@ -41,7 +41,7 @@ export class LongPressElement extends LitElement {
   }
 
   disconnectedCallback() {
-    console.log("long-press-element: disconnectedCallback() called.");
+    // console.log("long-press-element: disconnectedCallback() called.");
     super.disconnectedCallback();
     this.removeEventListener("pointerdown", this.#pointerDownHandler);
     this.removeEventListener("pointerup", this.#longPressAbortHandler);
@@ -49,14 +49,14 @@ export class LongPressElement extends LitElement {
   }
 
   render() {
-    console.log("long-press-element: render() called.");
+    // console.log("long-press-element: render() called.");
     return html`<slot></slot>`;
   }
 
   #pointerDownTimeout = {};
 
   #pointerDownHandler(event) {
-    console.log("long-press-element: #pointerDownHandler() called.");
+    // console.log("long-press-element: #pointerDownHandler() called.");
     const { target, pointerId } = event;
     const init = {
       ...event,
@@ -75,14 +75,14 @@ export class LongPressElement extends LitElement {
 
   #longPressAbortHandler(event) {
     let pointerId = event.pointerId;
-    console.log("long-press-element: #longPressAbortHandler() called.", event);
-    console.log(
-      "long-press-element: #pointerDownTimeout[pointerId] ",
-      this.#pointerDownTimeout[pointerId]
-    );
+    // console.log("long-press-element: #longPressAbortHandler() called.", event);
+    // console.log(
+    //   "long-press-element: #pointerDownTimeout[pointerId] ",
+    //   this.#pointerDownTimeout[pointerId]
+    // );
     // If already timed out, this will do nothing
     if (this.#pointerDownTimeout[pointerId]) {
-      console.log("This is a click");
+      // console.log("This is a click");
       const longPress = new LongPressEvent(`${this.eventPrefix}-click`, {
         ...event,
         startTimeStamp: event.timeStamp,
@@ -93,12 +93,12 @@ export class LongPressElement extends LitElement {
       );
       delete this.#pointerDownTimeout[pointerId];
     } else {
-      console.log("This is a long press");
+      // console.log("This is a long press");
     }
   }
 
   constructor() {
     super();
-    console.log("long-press-element: constructor() called.");
+    // console.log("long-press-element: constructor() called.");
   }
 }

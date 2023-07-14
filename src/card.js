@@ -88,7 +88,6 @@ export class HotTubCard extends LitElement {
     // Update LEDs status
     this.light_entity_state = hass.states[this.light_entity];
     if (this.light_entity_state) {
-      console.log(this.light_entity_state);
       this.light_state = this.light_entity_state.state;
     }
     // Update the Pump status
@@ -243,7 +242,6 @@ export class HotTubCard extends LitElement {
     if (new_state > 2) {
       new_state = 0;
     }
-    // console.log("ServiceName:", pump_entity_type);
     this._hass.callService(pump_entity_type, "set_value", {
       entity_id: this.pump_entity,
       value: new_state,
