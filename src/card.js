@@ -164,37 +164,90 @@ export class HotTubCard extends LitElement {
             </div>
             <div class="icon">
               <long-press-element>
-                <!-- TOTOTOTOTOTO -->
                 <hot-tub-icon
                   style="display:block;height:0"
                   lights-state="${this.light_state}"
                   lights-color="${this.rgbToHex(
                     this.light_entity_state.attributes?.rgb_color
                   )}"
-                  lights-brightness="${this.light_entity_state.attributes
-                    .brightness}"
+                  lights-brightness="${
+                    this.light_entity_state.attributes.brightness
+                  }"
                 ></hot-tub-icon>
               </long-press-element>
             </div>
             <div class="action action1">
-              <temperature-button
+              <!-- <temperature-button
                 temperature="${this.current_temp_state}"
-              ></temperature-button>
+              ></temperature-button> -->
+              <action-button
+                button-icon="${mdiFan}"
+                action1-icon="${mdiFan}"
+                action2-icon="${mdiChartBubble}"
+                ?action2-hide="${true}"
+                action3-icon="${mdiChartBubble}"
+                action3-background-color="red"
+                action3-rotate="${true}"
+                action4-icon="${mdiChartBubble}"
+                action4-rotate="${true}"
+                action4-rotate-duration="0.5"
+              >
+                <!-- <mdi-icon icon-name="${mdiChartBubble}"></mdi-icon> -->
+                <temperature-value-button slot="custom-button"></temperature-value-button>
+              </action-button>
             </div>
             <div class="action action2" @click=${this.doTogglePump}>
-              <pump-button pump-state="${this.pump_state}"> </pump-button>
+              <!-- <pump-button pump-state="${
+                this.pump_state
+              }"> </pump-button> -->
+              <action-button
+                button-icon="${mdiFan}"
+                action1-icon="${mdiFan}"
+                action2-icon="${mdiChartBubble}"
+                ?action2-hide="${true}"
+                action3-icon="${mdiChartBubble}"
+                action3-background-color="red"
+                action3-rotate="${true}"
+                action4-icon="${mdiChartBubble}"
+                action4-rotate="${true}"
+                action4-rotate-duration="0.5"
+              >
             </div>
             <div class="action action3" @click=${this.doToggleBlower}>
-              <blower-button
+              <!-- <blower-button
                 blower-state="${this.blower_state}"
-              ></blower-button>
+              ></blower-button> -->
+              <action-button
+                button-icon="${mdiFan}"
+                action1-icon="${mdiFan}"
+                action2-icon="${mdiChartBubble}"
+                ?action2-hide="${true}"
+                action3-icon="${mdiChartBubble}"
+                action3-background-color="red"
+                action3-rotate="${true}"
+                action4-icon="${mdiChartBubble}"
+                action4-rotate="${true}"
+                action4-rotate-duration="0.5"
+              >
             </div>
             <div class="action action4">
-              <extra-status-button
+              <!-- <extra-status-button
                 heater-state="${this.heater_state}"
                 filter-state-1="${this.filter1_state}"
                 filter-state-2="${this.filter2_state}"
-              ></extra-status-button>
+              ></extra-status-button> -->
+              <action-button
+                button-icon="${mdiFan}"
+                action1-icon="${mdiFan}"
+                action2-icon="${mdiChartBubble}"
+                ?action2-hide="${true}"
+                action3-icon="${mdiChartBubble}"
+                action3-background-color="red"
+                action3-rotate="${true}"
+                action4-icon="${mdiChartBubble}"
+                action4-rotate="${true}"
+                action4-rotate-duration="0.5"
+              >
             </div>
           </div>
         </div>

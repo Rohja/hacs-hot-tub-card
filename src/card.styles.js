@@ -58,11 +58,9 @@ export default css`
     height: 100%;
   }
 
-  .action {
-    padding: 1.5em;
-
-    position: relative;
-  }
+  /* .action {
+    aspect-ratio: 1 / 1;
+  } */
 
   .action1 {
     grid-area: action1;
@@ -84,5 +82,11 @@ export default css`
     display: block;
     width: 100%;
     height: 100%;
+  }
+
+  action-button {
+    display: block;
+    height: 100%;
+    width: 100%;
   }
 `;
