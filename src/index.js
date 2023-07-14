@@ -1,14 +1,12 @@
 import { HotTubCard, HotTubIcon } from "./card";
 // Components
 import { HotTubIcon } from "./components/hot-tub-icon";
-import { PumpButton } from "./components/pump-button";
+
 import { BlowerButton } from "./components/blower-button";
-import { ExtraStatusButton } from "./components/extra-status-button";
 
 import { ActionButton } from "./components/action-button";
 import { TemperatureValueButton } from "./components/temperature-value-button";
 // Tooling
-import { MDIIcon } from "./components/mdi";
 import { LongPressElement } from "./components/long-press-element";
 
 // Editor
@@ -23,15 +21,13 @@ customElements.define("hot-tub-card", HotTubCard);
 // );
 
 customElements.define("hot-tub-icon", HotTubIcon);
-customElements.define("pump-button", PumpButton);
+
 customElements.define("blower-button", BlowerButton);
-customElements.define("extra-status-button", ExtraStatusButton);
 
 customElements.define("action-button", ActionButton);
 customElements.define("temperature-value-button", TemperatureValueButton);
 
 // Tooling
-customElements.define("mdi-icon", MDIIcon);
 customElements.define("long-press-element", LongPressElement);
 
 // HA Config
