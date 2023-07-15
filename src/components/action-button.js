@@ -12,17 +12,22 @@ export class ActionIcon extends LitElement {
       mdiIcon: { type: String, attribute: "mdi-icon" },
       rotate: { type: Boolean, attribute: "rotate" },
       rotateDuration: { type: Number, attribute: "rotate-duration" },
+      viewbox: { type: String, attribute: "viewbox" },
     };
   }
 
-  hide = false;
-  scale = 60;
-  backgroundColor = "var(--primary-color)";
-  outline = "0.2em solid white";
-  fill = "white";
-  mdiIcon = mdiHelpRhombusOutline;
-  rotate = false;
-  rotateDuration = 2;
+  constructor() {
+    super();
+    this.hide = false;
+    this.scale = 60;
+    this.backgroundColor = "var(--primary-color)";
+    this.outline = "0.2em solid white";
+    this.fill = "white";
+    this.mdiIcon = mdiHelpRhombusOutline;
+    this.rotate = false;
+    this.rotateDuration = 2;
+    this.viewbox = "0 0 24 24";
+  }
 
   static styles = css`
     @keyframes rotation {
@@ -66,7 +71,7 @@ export class ActionIcon extends LitElement {
         }
       </style>
       <div class="container">
-        <svg viewBox="0 0 24 24" class="${this.rotate ? "rotate" : ""}">
+        <svg viewBox="${this.viewbox}" class="${this.rotate ? "rotate" : ""}">
           <path d="${this.mdiIcon}"></path>
         </svg>
       </div>
@@ -126,33 +131,75 @@ export class ActionButton extends LitElement {
       action2Rotate: { type: Boolean, attribute: "action2-rotate" },
       action3Rotate: { type: Boolean, attribute: "action3-rotate" },
       action4Rotate: { type: Boolean, attribute: "action4-rotate" },
+      // Rotate Duration (Number)
+      buttonRotateDuration: {
+        type: Number,
+        attribute: "button-rotate-duration",
+      },
+      action1RotateDuration: {
+        type: Number,
+        attribute: "action1-rotate-duration",
+      },
+      action2RotateDuration: {
+        type: Number,
+        attribute: "action2-rotate-duration",
+      },
+      action3RotateDuration: {
+        type: Number,
+        attribute: "action3-rotate-duration",
+      },
+      action4RotateDuration: {
+        type: Number,
+        attribute: "action4-rotate-duration",
+      },
+      // viewBox (String)
+      buttonViewBox: { type: String, attribute: "button-viewbox" },
+      action1ViewBox: { type: String, attribute: "action1-viewbox" },
+      action2ViewBox: { type: String, attribute: "action2-viewbox" },
+      action3ViewBox: { type: String, attribute: "action3-viewbox" },
+      action4ViewBox: { type: String, attribute: "action4-viewbox" },
     };
   }
 
-  // Hide
-  buttonHide = false;
-  action1Hide = false;
-  action2Hide = false;
-  action3Hide = false;
-  action4Hide = false;
-  // Background color
-  buttonBackgroundColor = "var(--primary-color)";
-  action1BackgroundColor = "var(--primary-color)";
-  action2BackgroundColor = "var(--primary-color)";
-  action3BackgroundColor = "var(--primary-color)";
-  action4BackgroundColor = "var(--primary-color)";
-  // Fill
-  buttonFill = "white";
-  action1Fill = "white";
-  action2Fill = "white";
-  action3Fill = "white";
-  action4Fill = "white";
-  // Rotate
-  buttonRotate = false;
-  action1Rotate = false;
-  action2Rotate = false;
-  action3Rotate = false;
-  action4Rotate = false;
+  constructor() {
+    super();
+    // Hide
+    this.buttonHide = false;
+    this.action1Hide = false;
+    this.action2Hide = false;
+    this.action3Hide = false;
+    this.action4Hide = false;
+    // Background color
+    this.buttonBackgroundColor = "var(--primary-color)";
+    this.action1BackgroundColor = "var(--primary-color)";
+    this.action2BackgroundColor = "var(--primary-color)";
+    this.action3BackgroundColor = "var(--primary-color)";
+    this.action4BackgroundColor = "var(--primary-color)";
+    // Fill
+    this.buttonFill = "white";
+    this.action1Fill = "white";
+    this.action2Fill = "white";
+    this.action3Fill = "white";
+    this.action4Fill = "white";
+    // Rotate
+    this.buttonRotate = false;
+    this.action1Rotate = false;
+    this.action2Rotate = false;
+    this.action3Rotate = false;
+    this.action4Rotate = false;
+    // Rotate Duration
+    this.buttonRotateDuration = 2;
+    this.action1RotateDuration = 2;
+    this.action2RotateDuration = 2;
+    this.action3RotateDuration = 2;
+    this.action4RotateDuration = 2;
+    // viewBox
+    this.buttonViewBox = "0 0 24 24";
+    this.action1ViewBox = "0 0 24 24";
+    this.action2ViewBox = "0 0 24 24";
+    this.action3ViewBox = "0 0 24 24";
+    this.action4ViewBox = "0 0 24 24";
+  }
 
   static styles = css`
     .container {
@@ -188,11 +235,6 @@ export class ActionButton extends LitElement {
     }
   `;
 
-  constructor() {
-    console.info("action-button: contructor() called.");
-    super();
-  }
-
   render() {
     return html`
       <div class="container">
@@ -203,6 +245,8 @@ export class ActionButton extends LitElement {
             background-color="${this.buttonBackgroundColor}"
             fill="${this.buttonFill}"
             ?rotate="${this.buttonRotate}"
+            rotate-duration="${this.buttonRotateDuration}"
+            viewbox="${this.buttonViewBox}"
           ></action-icon
         ></slot>
         <div class="action top-right">
@@ -213,6 +257,8 @@ export class ActionButton extends LitElement {
             fill="${this.action1Fill}"
             scale="80"
             ?rotate="${this.action1Rotate}"
+            rotate-duration="${this.action1RotateDuration}"
+            viewbox="${this.action1ViewBox}"
           ></action-icon>
         </div>
         <div class="action top-left">
@@ -223,6 +269,8 @@ export class ActionButton extends LitElement {
             fill="${this.action2Fill}"
             scale="80"
             ?rotate="${this.action2Rotate}"
+            rotate-duration="${this.action2RotateDuration}"
+            viewbox="${this.action2ViewBox}"
           ></action-icon>
         </div>
         <div class="action bottom-right">
@@ -233,6 +281,8 @@ export class ActionButton extends LitElement {
             fill="${this.action3Fill}"
             scale="80"
             ?rotate="${this.action3Rotate}"
+            rotate-duration="${this.action3RotateDuration}"
+            viewbox="${this.action3ViewBox}"
           ></action-icon>
         </div>
         <div class="action bottom-left">
@@ -243,7 +293,8 @@ export class ActionButton extends LitElement {
             fill="${this.action4Fill}"
             scale="80"
             ?rotate="${this.action4Rotate}"
-            rotate-duration="1"
+            rotate-duration="${this.action4RotateDuration}"
+            viewbox="${this.action4ViewBox}"
           ></action-icon>
         </div>
       </div>

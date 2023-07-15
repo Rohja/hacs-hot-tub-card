@@ -1,5 +1,15 @@
 import { html, LitElement, nothing, css } from "lit";
-import { mdiFan, mdiChartBubble } from "@mdi/js";
+import {
+  mdiFan,
+  mdiChartBubble,
+  mdiArrowUpThick,
+  mdiArrowDownThick,
+  mdiNumeric0,
+  mdiNumeric1,
+  mdiNumeric2,
+  mdiHeatingCoil,
+  mdiAirFilter,
+} from "@mdi/js";
 import styles from "./card.styles";
 
 export class HotTubCard extends LitElement {
@@ -135,6 +145,12 @@ export class HotTubCard extends LitElement {
   // declarative part
   static styles = styles;
 
+  pumpSpeed = [
+    [mdiNumeric0, 999],
+    [mdiNumeric1, 2],
+    [mdiNumeric2, 1],
+  ];
+
   rgbToHex(hex) {
     let [r, g, b] = hex || [0, 0, 0];
     return (
@@ -176,41 +192,38 @@ export class HotTubCard extends LitElement {
               </long-press-element>
             </div>
             <div class="action action1">
-              <!-- <temperature-button
-                temperature="${this.current_temp_state}"
-              ></temperature-button> -->
               <action-button
-                button-icon="${mdiFan}"
-                action1-icon="${mdiFan}"
-                action2-icon="${mdiChartBubble}"
+                action1-icon="${mdiArrowUpThick}"
+                action1-fill="red"
+                ?action1-hide="${this.current_temp_state <=
+                this.desired_temp_state
+                  ? true
+                  : false}"
                 ?action2-hide="${true}"
-                action3-icon="${mdiChartBubble}"
-                action3-background-color="red"
-                action3-rotate="${true}"
-                action4-icon="${mdiChartBubble}"
-                action4-rotate="${true}"
-                action4-rotate-duration="0.5"
+                action3-icon="${mdiArrowDownThick}"
+                action3-fill="blue"
+                ?action3-hide="${this.current_temp_state >=
+                this.desired_temp_state
+                  ? true
+                  : false}"
+                ?action4-hide="${true}"
               >
-                <!-- <mdi-icon icon-name="${mdiChartBubble}"></mdi-icon> -->
                 <temperature-value-button
                   slot="custom-button"
+                  value="${this.current_temp_state}"
                 ></temperature-value-button>
               </action-button>
             </div>
             <div class="action action2" @click=${this.doTogglePump}>
-              <!-- <pump-button pump-state="${this
-                .pump_state}"> </pump-button> -->
               <action-button
                 button-icon="${mdiFan}"
-                action1-icon="${mdiFan}"
-                action2-icon="${mdiChartBubble}"
+                ?button-rotate="${this.pump_state}"
+                button-rotate-duration="${this.pumpSpeed[this.pump_state][1]}"
+                action1-icon="${this.pumpSpeed[this.pump_state][0]}"
+                ?action1-hide=${!this.pump_state}
                 ?action2-hide="${true}"
-                action3-icon="${mdiChartBubble}"
-                action3-background-color="red"
-                action3-rotate="${true}"
-                action4-icon="${mdiChartBubble}"
-                action4-rotate="${true}"
-                action4-rotate-duration="0.5"
+                ?action3-hide="${true}"
+                ?action4-hide="${true}"
               ></action-button>
             </div>
             <div class="action action3" @click=${this.doToggleBlower}>
@@ -219,39 +232,31 @@ export class HotTubCard extends LitElement {
               ></blower-button>
               ></blower-button> -->
               <action-button
-                button-icon="${mdiFan}"
-                action1-icon="${mdiFan}"
-                action2-icon="${mdiChartBubble}"
+                ?action1-hide="${true}"
                 ?action2-hide="${true}"
-                action3-icon="${mdiChartBubble}"
-                action3-background-color="red"
-                action3-rotate="${true}"
-                action4-icon="${mdiChartBubble}"
-                action4-rotate="${true}"
+                ?action3-hide="${true}"
+                action4-icon="${mdiFan}"
+                ?action4-rotate="${this.blower_state == "on" ? true : false}"
                 action4-rotate-duration="0.5"
                 ><blower-button
-                  blower-state="${this.blower_state}"
+                  state="${this.blower_state}"
                   slot="custom-button"
                 ></blower-button
               ></action-button>
             </div>
             <div class="action action4">
-              <!-- <extra-status-button
-                heater-state="${this.heater_state}"
-                filter-state-1="${this.filter1_state}"
-                filter-state-2="${this.filter2_state}"
-              ></extra-status-button> -->
               <action-button
-                button-icon="${mdiFan}"
-                action1-icon="${mdiFan}"
-                action2-icon="${mdiChartBubble}"
+                button-icon="${mdiHeatingCoil}"
+                button-viewbox="-5 -5 35 35"
+                button-fill="${this.heater_state == "on" ? "red" : "white"}"
+                action1-icon="${mdiAirFilter}"
+                action1-viewbox="-5 -5 35 35"
+                ?action1-hide="${this.filter1_state == "off" ? true : false}"
                 ?action2-hide="${true}"
-                action3-icon="${mdiChartBubble}"
-                action3-background-color="red"
-                action3-rotate="${true}"
-                action4-icon="${mdiChartBubble}"
-                action4-rotate="${true}"
-                action4-rotate-duration="0.5"
+                action3-icon="${mdiAirFilter}"
+                action3-viewbox="-5 -5 35 35"
+                ?action3-hide="${this.filter2_state == "off" ? true : false}"
+                ?action4-hide="${true}"
               ></action-button>
             </div>
           </div>

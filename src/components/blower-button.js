@@ -2,6 +2,12 @@ import { html, css, LitElement } from "lit";
 import { mdiChartBubble } from "@mdi/js";
 
 export class BlowerButton extends LitElement {
+  static get properties() {
+    return {
+      state: { type: String, attribute: "state" },
+    };
+  }
+
   static styles = css`
     .container {
       display: flex;
@@ -80,6 +86,11 @@ export class BlowerButton extends LitElement {
 
   render() {
     return html`
+      <style>
+        .bubble {
+          display: ${this.state === "on" ? "block" : "none"};
+        }
+      </style>
       <div class="container">
         <div class="wrapper">
           <div class="bubbles">

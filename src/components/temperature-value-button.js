@@ -1,6 +1,12 @@
 import { html, css, LitElement } from "lit";
 
 export class TemperatureValueButton extends LitElement {
+  static get properties() {
+    return {
+      value: { type: Number, attribute: "value" },
+    };
+  }
+
   static styles = css`
     .container {
       display: flex;
@@ -32,7 +38,7 @@ export class TemperatureValueButton extends LitElement {
     return html`
       <div class="container">
         <div class="wrapper">
-          <div class="text">35°</div>
+          <div class="text">${this.value}°</div>
         </div>
       </div>
     `;
