@@ -28,7 +28,7 @@ customElements.define("action-button", ActionButton);
 customElements.define("temperature-value-button", TemperatureValueButton);
 
 // Tooling
-customElements.define("long-press-element", LongPressElement);
+customElements.define("long-press", LongPressElement);
 
 // HA Config
 window.customCards = window.customCards || [];

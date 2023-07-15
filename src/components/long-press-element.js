@@ -23,14 +23,14 @@ const DEFAULT_LONG_PRESS_DELAY = 500;
 export class LongPressElement extends LitElement {
   static properties = {
     delay: { type: Number },
-    eventPrefix: { type: String, attribute: "event-name" },
+    eventPrefix: { type: String, attribute: "event-prefix" },
   };
 
   /**
    * The delay for waiting for long press
    */
   delay = DEFAULT_LONG_PRESS_DELAY;
-  eventPrefix = "hot-tub-icon";
+  eventPrefix = "default";
 
   connectedCallback() {
     // console.log("long-press-element: connectedCallback() called.");
@@ -56,7 +56,6 @@ export class LongPressElement extends LitElement {
   #pointerDownTimeout = {};
 
   #pointerDownHandler(event) {
-    // console.log("long-press-element: #pointerDownHandler() called.");
     const { target, pointerId } = event;
     const init = {
       ...event,
@@ -65,6 +64,7 @@ export class LongPressElement extends LitElement {
     this.#pointerDownTimeout[pointerId] =
       this.ownerDocument.defaultView.setTimeout(() => {
         delete this.#pointerDownTimeout[pointerId];
+        console.log("event:", `${this.eventPrefix}-long-press`);
         const longPress = new LongPressEvent(
           `${this.eventPrefix}-long-press`,
           init
@@ -76,13 +76,9 @@ export class LongPressElement extends LitElement {
   #longPressAbortHandler(event) {
     let pointerId = event.pointerId;
     // console.log("long-press-element: #longPressAbortHandler() called.", event);
-    // console.log(
-    //   "long-press-element: #pointerDownTimeout[pointerId] ",
-    //   this.#pointerDownTimeout[pointerId]
-    // );
     // If already timed out, this will do nothing
     if (this.#pointerDownTimeout[pointerId]) {
-      // console.log("This is a click");
+      console.log("event:", `${this.eventPrefix}-click`);
       const longPress = new LongPressEvent(`${this.eventPrefix}-click`, {
         ...event,
         startTimeStamp: event.timeStamp,
@@ -92,8 +88,6 @@ export class LongPressElement extends LitElement {
         this.#pointerDownTimeout[pointerId]
       );
       delete this.#pointerDownTimeout[pointerId];
-    } else {
-      // console.log("This is a long press");
     }
   }
 

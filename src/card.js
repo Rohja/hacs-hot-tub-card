@@ -179,7 +179,7 @@ export class HotTubCard extends LitElement {
               </h2>
             </div>
             <div class="icon">
-              <long-press-element>
+              <long-press event-prefix="hot-tub-icon">
                 <hot-tub-icon
                   style="display:block;height:0"
                   lights-state="${this.light_state}"
@@ -189,20 +189,22 @@ export class HotTubCard extends LitElement {
                   lights-brightness="${this.light_entity_state.attributes
                     .brightness}"
                 ></hot-tub-icon>
-              </long-press-element>
+              </long-press>
             </div>
             <div class="action action1">
               <action-button
-                action1-icon="${mdiArrowUpThick}"
-                action1-fill="red"
-                ?action1-hide="${this.current_temp_state <=
-                this.desired_temp_state
-                  ? true
-                  : false}"
+                name="action1"
+                ?action1-hide="${true}"
                 ?action2-hide="${true}"
-                action3-icon="${mdiArrowDownThick}"
-                action3-fill="blue"
-                ?action3-hide="${this.current_temp_state >=
+                action3-icon="${this.current_temp_state >=
+                this.desired_temp_state
+                  ? mdiArrowUpThick
+                  : mdiArrowDownThick}"
+                action3-fill="${this.current_temp_state >=
+                this.desired_temp_state
+                  ? "red"
+                  : "blue"}"
+                ?action3-hide="${this.current_temp_state ==
                 this.desired_temp_state
                   ? true
                   : false}"
@@ -214,8 +216,9 @@ export class HotTubCard extends LitElement {
                 ></temperature-value-button>
               </action-button>
             </div>
-            <div class="action action2" @click=${this.doTogglePump}>
+            <div class="action action2">
               <action-button
+                name="action2"
                 button-icon="${mdiFan}"
                 ?button-rotate="${this.pump_state}"
                 button-rotate-duration="${this.pumpSpeed[this.pump_state][1]}"
@@ -226,12 +229,9 @@ export class HotTubCard extends LitElement {
                 ?action4-hide="${true}"
               ></action-button>
             </div>
-            <div class="action action3" @click=${this.doToggleBlower}>
-              <!-- <<blower-button
-                blower-state="${this.blower_state}"
-              ></blower-button>
-              ></blower-button> -->
+            <div class="action action3">
               <action-button
+                name="action3"
                 ?action1-hide="${true}"
                 ?action2-hide="${true}"
                 ?action3-hide="${true}"
@@ -246,9 +246,12 @@ export class HotTubCard extends LitElement {
             </div>
             <div class="action action4">
               <action-button
+                name="action4"
                 button-icon="${mdiHeatingCoil}"
-                button-viewbox="-5 -5 35 35"
-                button-fill="${this.heater_state == "on" ? "red" : "white"}"
+                button-viewbox="-5 -6 35 35"
+                button-background-color="${this.heater_state == "on"
+                  ? "red"
+                  : "var(--primary-color)"}"
                 action1-icon="${mdiAirFilter}"
                 action1-viewbox="-5 -5 35 35"
                 ?action1-hide="${this.filter1_state == "off" ? true : false}"
@@ -347,6 +350,12 @@ export class HotTubCard extends LitElement {
     });
     this.addEventListener("hot-tub-icon-click", (event) => {
       this.doToggleLights(event);
+    });
+    this.addEventListener("action2-button-click", (event) => {
+      this.doTogglePump(event);
+    });
+    this.addEventListener("action3-button-click", (event) => {
+      this.doToggleBlower(event);
     });
   }
 

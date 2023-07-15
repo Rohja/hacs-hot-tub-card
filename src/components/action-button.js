@@ -86,6 +86,7 @@ export class ActionButton extends LitElement {
 
   static get properties() {
     return {
+      name: { type: String, attribute: "name" },
       // Icons (String)
       buttonIcon: { type: String, attribute: "button-icon" },
       action1Icon: { type: String, attribute: "action1-icon" },
@@ -163,6 +164,7 @@ export class ActionButton extends LitElement {
 
   constructor() {
     super();
+    this.name = "action-button";
     // Hide
     this.buttonHide = false;
     this.action1Hide = false;
@@ -238,17 +240,19 @@ export class ActionButton extends LitElement {
   render() {
     return html`
       <div class="container">
-        <slot name="custom-button"
-          ><action-icon
-            class="main"
-            mdi-icon="${this.buttonIcon}"
-            background-color="${this.buttonBackgroundColor}"
-            fill="${this.buttonFill}"
-            ?rotate="${this.buttonRotate}"
-            rotate-duration="${this.buttonRotateDuration}"
-            viewbox="${this.buttonViewBox}"
-          ></action-icon
-        ></slot>
+        <long-press event-prefix="${this.name}-button">
+          <slot name="custom-button"
+            ><action-icon
+              class="main"
+              mdi-icon="${this.buttonIcon}"
+              background-color="${this.buttonBackgroundColor}"
+              fill="${this.buttonFill}"
+              ?rotate="${this.buttonRotate}"
+              rotate-duration="${this.buttonRotateDuration}"
+              viewbox="${this.buttonViewBox}"
+            ></action-icon
+          ></slot>
+        </long-press>
         <div class="action top-right">
           <action-icon
             ?hide="${this.action1Hide}"
