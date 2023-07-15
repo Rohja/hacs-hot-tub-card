@@ -236,6 +236,13 @@ export class HotTubIcon extends LitElement {
             transform="matrix(0.97622584,0,0,0.95813842,25.528231,-16.478729)"
           >
             <path
+              style="fill:#171717;stroke:#000000;stroke-width:0.27357298px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+              d="m -24.97961,244.10384 0.804437,-68.4685 2.901555,-7.05054 35.011867,-11.72532 60.1736,-20.66837 11.117976,-1.39114 21.455735,6.45886 78.41098,26.9285 3.90105,4.96836 0.29258,17.19052 -0.0975,55.64561 -3.62681,7.05094 -26.80133,13.21996 -57.55822,26.66463 -5.784206,3.54242 -12.20616,2.1079 -17.033458,-3.02132 -8.620169,-5.12921 -74.685156,-35.90449 -6.344445,-4.49685 z"
+              id="path845"
+              inkscape:connector-curvature="0"
+              inkscape:label="#bg"
+            />
+            <path
               style="opacity:${this.scaleBrightness()}%;fill:url(#linearGradient5293-8);fill-opacity:1;stroke:none;stroke-width:0.429925px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
               d="m 169.81598,260.85711 -14.46442,-42.73233 -27.82697,13.3753 -1.01961,50.22927 z"
               id="light_ext_right"

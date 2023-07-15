@@ -50,17 +50,8 @@ export default css`
 
   .icon {
     grid-area: icon;
-    padding-left: 1.5em;
+    padding: 2em;
   }
-
-  .icon > svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  /* .action {
-    aspect-ratio: 1 / 1;
-  } */
 
   .action1 {
     grid-area: action1;
@@ -76,12 +67,6 @@ export default css`
 
   .action4 {
     grid-area: action4;
-  }
-
-  long-press-element {
-    display: block;
-    width: 100%;
-    height: 100%;
   }
 
   action-button {
