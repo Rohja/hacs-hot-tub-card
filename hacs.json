@@ -1,6 +1,6 @@
 {
-  "name": "Balboa Hot Tub",
+  "name": "Hot Tub Card",
   "render_readme": true,
-  "filename": "card.js",
+  "filename": "hot-tub-card.js",
   "content_in_root": false
 }
