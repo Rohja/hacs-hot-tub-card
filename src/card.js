@@ -91,6 +91,37 @@ export class HotTubCard extends LitElement {
       // Use setter bellow
       this.hass = this._hass;
     }
+    this.checkConfig();
+  }
+
+  checkConfig() {
+    if (!this.light_entity) {
+      throw new Error("Please define a light entity");
+    }
+    if (!this.pump_entity) {
+      throw new Error("Please define a pump entity");
+    }
+    if (!this.blower_entity) {
+      throw new Error("Please define a blower entity");
+    }
+    if (!this.current_temp_entity) {
+      throw new Error("Please define a current temp entity");
+    }
+    if (!this.desired_temp_entity) {
+      throw new Error("Please define a desired temp entity");
+    }
+    if (!this.outdoor_temp_entity) {
+      throw new Error("Please define a outdoor temp entity");
+    }
+    if (!this.heater_entity) {
+      throw new Error("Please define a heater entity");
+    }
+    if (!this.filter1_entity) {
+      throw new Error("Please define a filter 1 entity");
+    }
+    if (!this.filter2_entity) {
+      throw new Error("Please define a filter 2 entity");
+    }
   }
 
   set hass(hass) {
@@ -184,10 +215,10 @@ export class HotTubCard extends LitElement {
                   style="display:block;height:0"
                   lights-state="${this.light_state}"
                   lights-color="${this.rgbToHex(
-                    this.light_entity_state.attributes?.rgb_color
+                    this.light_entity_state?.attributes?.rgb_color
                   )}"
-                  lights-brightness="${this.light_entity_state.attributes
-                    .brightness}"
+                  lights-brightness="${this.light_entity_state?.attributes
+                    ?.brightness}"
                 ></hot-tub-icon>
               </long-press>
             </div>
@@ -268,10 +299,10 @@ export class HotTubCard extends LitElement {
     `;
   }
 
-  // card configuration
-  // static getConfigElement() {
-  //   return document.createElement("toggle-card-lit-editor");
-  // }
+  // card configuration UI
+  static getConfigElement() {
+    return document.createElement("hot-tub-card-editor");
+  }
 
   doToggleLights(event) {
     try {
@@ -364,8 +395,8 @@ export class HotTubCard extends LitElement {
       light_entity: "input_boolean.spa_lights",
       pump_entity: "input_number.spa_pump_speed",
       blower_entity: "input_boolean.spa_blower",
-      current_temp_entity: "input_number.spa_water_current_temp",
-      desired_temp_entity: "input_number.spa_water_desired_temp",
+      current_temp_entity: "input_number.spa_water_current_temperature",
+      desired_temp_entity: "input_number.spa_water_desired_temperature",
       outdoor_temp_entity: "input_number.outdoor_temperature",
       heater_entity: "input_boolean.spa_heater",
       filter1_entity: "input_boolean.spa_filter_1",

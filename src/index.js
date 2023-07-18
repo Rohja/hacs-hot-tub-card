@@ -12,23 +12,20 @@ import { LongPressElement } from "./components/long-press-element";
 // Editor
 import { HotTubCardEditor } from "./editor";
 
-// Lit Framework Config
+// Card
 customElements.define("hot-tub-card", HotTubCard);
-//- Editor Card
-// customElements.define(
-//     "hot-tub-card-editor",
-//     HotTubCardEditor
-// );
 
-customElements.define("hot-tub-icon", HotTubIcon);
-
-customElements.define("blower-button", BlowerButton);
-
-customElements.define("action-button", ActionButton);
-customElements.define("temperature-value-button", TemperatureValueButton);
+// Editor Card
+customElements.define("hot-tub-card-editor", HotTubCardEditor);
 
 // Tooling
 customElements.define("long-press", LongPressElement);
+customElements.define("action-button", ActionButton);
+
+// Components
+customElements.define("hot-tub-icon", HotTubIcon);
+customElements.define("blower-button", BlowerButton);
+customElements.define("temperature-value-button", TemperatureValueButton);
 
 // HA Config
 window.customCards = window.customCards || [];
@@ -36,6 +33,9 @@ window.customCards.push({
   type: "hot-tub-card",
   name: "Hot Tub Card",
   description: "A nice card to display your hot tub state",
+  preview: true,
+  documentationURL:
+    "https://github.com/Rohja/hacs-hot-tub-card/blob/master/README.md",
 });
 
 console.info("Hot Tub Card loaded... (custom:hot-tub-card)");
