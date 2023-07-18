@@ -8118,6 +8118,18 @@ class $bf513b85805031e6$export$83525664c1777945 extends (0, $ab210b2da7b39b9d$ex
         // while editing the entity in the card editor
         if (this._hass) // Use setter bellow
         this.hass = this._hass;
+        this.checkConfig();
+    }
+    checkConfig() {
+        if (!this.light_entity) throw new Error("Please define a light entity");
+        if (!this.pump_entity) throw new Error("Please define a pump entity");
+        if (!this.blower_entity) throw new Error("Please define a blower entity");
+        if (!this.current_temp_entity) throw new Error("Please define a current temp entity");
+        if (!this.desired_temp_entity) throw new Error("Please define a desired temp entity");
+        if (!this.outdoor_temp_entity) throw new Error("Please define a outdoor temp entity");
+        if (!this.heater_entity) throw new Error("Please define a heater entity");
+        if (!this.filter1_entity) throw new Error("Please define a filter 1 entity");
+        if (!this.filter2_entity) throw new Error("Please define a filter 2 entity");
     }
     set hass(hass) {
         this._hass = hass;
@@ -8199,8 +8211,8 @@ class $bf513b85805031e6$export$83525664c1777945 extends (0, $ab210b2da7b39b9d$ex
                 <hot-tub-icon
                   style="display:block;height:0"
                   lights-state="${this.light_state}"
-                  lights-color="${this.rgbToHex(this.light_entity_state.attributes?.rgb_color)}"
-                  lights-brightness="${this.light_entity_state.attributes.brightness}"
+                  lights-color="${this.rgbToHex(this.light_entity_state?.attributes?.rgb_color)}"
+                  lights-brightness="${this.light_entity_state?.attributes?.brightness}"
                 ></hot-tub-icon>
               </long-press>
             </div>
@@ -8269,10 +8281,10 @@ class $bf513b85805031e6$export$83525664c1777945 extends (0, $ab210b2da7b39b9d$ex
       </ha-card>
     `;
     }
-    // card configuration
-    // static getConfigElement() {
-    //   return document.createElement("toggle-card-lit-editor");
-    // }
+    // card configuration UI
+    static getConfigElement() {
+        return document.createElement("hot-tub-card-editor");
+    }
     doToggleLights(event) {
         try {
             var light_entity_type = this.light_entity.split(".")[0];
@@ -8354,8 +8366,8 @@ class $bf513b85805031e6$export$83525664c1777945 extends (0, $ab210b2da7b39b9d$ex
             light_entity: "input_boolean.spa_lights",
             pump_entity: "input_number.spa_pump_speed",
             blower_entity: "input_boolean.spa_blower",
-            current_temp_entity: "input_number.spa_water_current_temp",
-            desired_temp_entity: "input_number.spa_water_desired_temp",
+            current_temp_entity: "input_number.spa_water_current_temperature",
+            desired_temp_entity: "input_number.spa_water_desired_temperature",
             outdoor_temp_entity: "input_number.outdoor_temperature",
             heater_entity: "input_boolean.spa_heater",
             filter1_entity: "input_boolean.spa_filter_1",
@@ -9359,10 +9371,47 @@ class $ed3e10bc7420bb45$export$6ca9e64bec031b7e extends (0, $ab210b2da7b39b9d$ex
 
 
 
+var $c106d6426411ff6f$var$safeIsNaN = Number.isNaN || function ponyfill(value) {
+    return typeof value === "number" && value !== value;
+};
+function $c106d6426411ff6f$var$isEqual(first, second) {
+    if (first === second) return true;
+    if ($c106d6426411ff6f$var$safeIsNaN(first) && $c106d6426411ff6f$var$safeIsNaN(second)) return true;
+    return false;
+}
+function $c106d6426411ff6f$var$areInputsEqual(newInputs, lastInputs) {
+    if (newInputs.length !== lastInputs.length) return false;
+    for(var i = 0; i < newInputs.length; i++){
+        if (!$c106d6426411ff6f$var$isEqual(newInputs[i], lastInputs[i])) return false;
+    }
+    return true;
+}
+function $c106d6426411ff6f$export$2e2bcd8739ae039(resultFn, isEqual) {
+    if (isEqual === void 0) isEqual = $c106d6426411ff6f$var$areInputsEqual;
+    var cache = null;
+    function memoized() {
+        var newArgs = [];
+        for(var _i = 0; _i < arguments.length; _i++)newArgs[_i] = arguments[_i];
+        if (cache && cache.lastThis === this && isEqual(newArgs, cache.lastArgs)) return cache.lastResult;
+        var lastResult = resultFn.apply(this, newArgs);
+        cache = {
+            lastResult: lastResult,
+            lastArgs: newArgs,
+            lastThis: this
+        };
+        return lastResult;
+    }
+    memoized.clear = function clear() {
+        cache = null;
+    };
+    return memoized;
+}
+
+
 class $fc7d6e547b6fcb14$export$ed00679c1f4531d5 extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
     static get properties() {
         return {
-            // hass: {},
+            hass: {},
             _config: {
                 state: true
             }
@@ -9371,73 +9420,190 @@ class $fc7d6e547b6fcb14$export$ed00679c1f4531d5 extends (0, $ab210b2da7b39b9d$ex
     setConfig(config) {
         this._config = config;
     }
-    static styles = (0, $def2de46b9306e8a$export$dbf350e5966cf602)`
-    .table {
-      display: table;
-    }
-    .row {
-      display: table-row;
-    }
-    .cell {
-      display: table-cell;
-      padding: 0.5em;
-    }
-  `;
+    static styles = (0, $def2de46b9306e8a$export$dbf350e5966cf602)``;
+    _schema = (0, $c106d6426411ff6f$export$2e2bcd8739ae039)((showSeverity)=>[
+            {
+                label: "Name",
+                name: "light_entity",
+                selector: {
+                    entity: {
+                        domain: [
+                            "light"
+                        ]
+                    }
+                }
+            },
+            {
+                name: "current_temp_entity",
+                selector: {
+                    entity: {
+                        domain: [
+                            "sensor",
+                            "input_number"
+                        ]
+                    }
+                }
+            },
+            {
+                name: "desired_temp_entity",
+                selector: {
+                    entity: {
+                        domain: [
+                            "number",
+                            "input_number"
+                        ]
+                    }
+                }
+            },
+            {
+                name: "outdoor_temp_entity",
+                selector: {
+                    entity: {
+                        domain: [
+                            "number",
+                            "input_number"
+                        ]
+                    }
+                }
+            },
+            {
+                name: "pump_entity",
+                selector: {
+                    entity: {
+                        domain: [
+                            "number",
+                            "input_number"
+                        ]
+                    }
+                }
+            },
+            {
+                name: "blower_entity",
+                selector: {
+                    entity: {
+                        domain: [
+                            "switch",
+                            "binary_sensor"
+                        ]
+                    }
+                }
+            },
+            {
+                name: "heater_entity",
+                selector: {
+                    entity: {
+                        domain: [
+                            "switch",
+                            "binary_sensor"
+                        ]
+                    }
+                }
+            },
+            {
+                name: "filter1_entity",
+                selector: {
+                    entity: {
+                        domain: [
+                            "switch",
+                            "binary_sensor"
+                        ]
+                    }
+                }
+            },
+            {
+                name: "filter2_entity",
+                selector: {
+                    entity: {
+                        domain: [
+                            "switch",
+                            "binary_sensor"
+                        ]
+                    }
+                }
+            }
+        ]);
     render() {
+        if (!this.hass || !this._config) return nothing;
+        const schema = this._schema(this._config.severity !== undefined);
+        const data = {
+            show_severity: this._config.severity !== undefined,
+            ...this._config
+        };
         return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
-            <form class="table">
-                <div class="row">
-                    <label class="label cell" for="header">Header:</label>
-                    <input
-                        @change="${this.handleChangedEvent}"
-                        class="value cell" id="header" value="${this._config.header}"></input>
-                </div>
-                <div class="row">
-                    <label class="label cell" for="mermaid">Mermaid code:</label>
-                    <textarea
-                        @change="${this.handleChangedEvent}"
-                        rows="10" class="value cell" id="mermaid"
-                        >${this._config.mermaid}</textarea>
-                </div>
-            </form>
-        `;
+      <ha-form
+        .hass=${this.hass}
+        .data=${data}
+        .schema=${schema}
+        @value-changed=${this._valueChanged}
+        .computeLabel=${this._computeLabelCallback}
+      ></ha-form>
+    `;
     }
-    handleChangedEvent(changedEvent) {
-        // this._config is readonly, copy needed
-        var newConfig = Object.assign({}, this._config);
-        if (changedEvent.target.id == "header") newConfig.header = changedEvent.target.value;
-        else if (changedEvent.target.id == "mermaid") newConfig.mermaid = changedEvent.target.value;
+    _valueChanged(ev) {
+        let config = ev.detail.value;
+        console.log("Config:", config);
+        // if (config.show_severity) {
+        //   config = {
+        //     ...config,
+        //     severity: {
+        //       green: config.green || config.severity?.green || 0,
+        //       yellow: config.yellow || config.severity?.yellow || 0,
+        //       red: config.red || config.severity?.red || 0,
+        //     },
+        //   };
+        // } else if (!config.show_severity && config.severity) {
+        //   delete config.severity;
+        // }
+        // delete config.show_severity;
+        // delete config.green;
+        // delete config.yellow;
+        // delete config.red;
         const messageEvent = new CustomEvent("config-changed", {
             detail: {
-                config: newConfig
+                config: config
             },
             bubbles: true,
             composed: true
         });
         this.dispatchEvent(messageEvent);
     }
+    _computeLabelCallback(schema) {
+        const labels = {
+            light_entity: "Light Entity",
+            current_temp_entity: "Current Temperature Entity",
+            desired_temp_entity: "Desired Temperature Entity",
+            outdoor_temp_entity: "Outdoor Temperature Entity",
+            pump_entity: "Pump Entity",
+            blower_entity: "Blower Entity",
+            heater_entity: "Heater Entity",
+            filter1_entity: "Filter 1 Entity",
+            filter2_entity: "Filter 2 Entity"
+        };
+        if (labels[schema.name]) return labels[schema.name];
+        return schema.name;
+    }
 }
 
 
-// Lit Framework Config
+// Card
 customElements.define("hot-tub-card", (0, $bf513b85805031e6$export$83525664c1777945));
-//- Editor Card
-// customElements.define(
-//     "hot-tub-card-editor",
-//     HotTubCardEditor
-// );
-customElements.define("hot-tub-icon", (0, $df774762052b2d8a$export$16e5ac37e5bee1fc));
-customElements.define("blower-button", (0, $e46106877f0a0dd4$export$13ee1d2285084470));
-customElements.define("action-button", (0, $6883c1461fed9e4e$export$cfc7921d29ef7b80));
-customElements.define("temperature-value-button", (0, $534a35d36a5898d2$export$c46c8bbe9c971a80));
+// Editor Card
+customElements.define("hot-tub-card-editor", (0, $fc7d6e547b6fcb14$export$ed00679c1f4531d5));
 // Tooling
 customElements.define("long-press", (0, $ed3e10bc7420bb45$export$6ca9e64bec031b7e));
+customElements.define("action-button", (0, $6883c1461fed9e4e$export$cfc7921d29ef7b80));
+// Components
+customElements.define("hot-tub-icon", (0, $df774762052b2d8a$export$16e5ac37e5bee1fc));
+customElements.define("blower-button", (0, $e46106877f0a0dd4$export$13ee1d2285084470));
+customElements.define("temperature-value-button", (0, $534a35d36a5898d2$export$c46c8bbe9c971a80));
 // HA Config
 window.customCards = window.customCards || [];
 window.customCards.push({
     type: "hot-tub-card",
     name: "Hot Tub Card",
-    description: "A nice card to display your hot tub state"
+    description: "A nice card to display your hot tub state",
+    preview: true,
+    documentationURL: "https://github.com/Rohja/hacs-hot-tub-card/blob/master/README.md"
 });
 console.info("Hot Tub Card loaded... (custom:hot-tub-card)");
 
