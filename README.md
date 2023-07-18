@@ -39,7 +39,7 @@ filter2_entity: binary_sensor.bwa_link_filter_cycle_2_running
 
 ## ToDo
 
- - [ ] Graphical Editor
+ - [x] Graphical Editor
  - [ ] Support regular light (non-rgb)
  - [ ] Errors management
  - [ ] Release process
