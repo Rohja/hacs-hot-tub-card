@@ -8,13 +8,13 @@ Hot Tub card initially made for my Balboa-based Hot Tub connected to [BWALink](h
 
 ## Features
 
- - Single Click to power on/off the lights
- - Long Click to get extended lights control using [light-entity-card.js](https://github.com/ljmerza/light-entity-card) and [browser_mod](https://github.com/thomasloven/hass-browser_mod) (for the popup).
- - Display outdoor temperature and current water temperature (including red and blue arrows to display if the current temperature is above or bellow the disired on).
- - Display and control the main pump (0 -> 1 -> 2 -> 0 on click).
- - Display and control the blower (on/off on click).
- - Display if the heater is running (white = off, red = on).
- - Display the current filtration cycles (up icon is first one, down icon is second one).
+- Single Click to power on/off the lights
+- Long Click to get extended lights control using [light-entity-card.js](https://github.com/ljmerza/light-entity-card) and [browser_mod](https://github.com/thomasloven/hass-browser_mod) (for the popup).
+- Display outdoor temperature and current water temperature (including red and blue arrows to display if the current temperature is above or bellow the disired on).
+- Display and control the main pump (0 -> 1 -> 2 -> 0 on click).
+- Display and control the blower (on/off on click).
+- Display if the heater is running (white = off, red = on).
+- Display the current filtration cycles (up icon is first one, down icon is second one).
 
 ## Configuration
 
@@ -34,16 +34,18 @@ filter2_entity: binary_sensor.bwa_link_filter_cycle_2_running
 ```
 
 **Notes**:
- - the `light_entity` needs to be a light entity that support RGB for now.
- - the `pump_entity` needs to accept the following values: 0/off, 1/low speed, 2/high speed.
+
+- the `light_entity` needs to be a light entity that support RGB for now.
+- the `pump_entity` needs to accept the following values: 0/off, 1/low speed, 2/high speed.
 
 ## ToDo
 
- - [x] Graphical Editor
- - [ ] Support regular light (non-rgb)
- - [ ] Errors management
- - [ ] Release process
- - [ ] Better documentation
- - [ ] Customize colors from YAML
- - [ ] More flexible settings
- - [ ] Something else ??
+- [x] Graphical Editor
+- [ ] Support regular light (non-rgb)
+- [ ] Errors management
+- [ ] Release process
+- [ ] Better documentation
+- [ ] Customize colors from YAML
+- [ ] More flexible settings
+- [ ] Installation "How to" with HACS
+- [ ] Something else ??

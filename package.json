@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@mdi/js": "^7.2.96",
+    "ha-elements": "github:Rohja/ha-elements#v1.0.0",
     "lit": "^2.7.4",
     "memoize-one": "^6.0.0"
   }
