@@ -1,13 +1,9 @@
 import { HotTubCard, HotTubIcon } from "./card";
+import { LongPressElement, ActionButton } from "ha-elements";
 // Components
 import { HotTubIcon } from "./components/hot-tub-icon";
-
 import { BlowerButton } from "./components/blower-button";
-
-import { ActionButton } from "./components/action-button";
 import { TemperatureValueButton } from "./components/temperature-value-button";
-// Tooling
-import { LongPressElement } from "./components/long-press-element";
 
 // Editor
 import { HotTubCardEditor } from "./editor";

@@ -279,34 +279,37 @@ $19fe8e3abedf4df0$export$c7c07a37856565d[$19fe8e3abedf4df0$var$d] = !0, $19fe8e3
  */ var $f58f44579a4747ac$var$t;
 const $f58f44579a4747ac$var$i = window, $f58f44579a4747ac$var$s = $f58f44579a4747ac$var$i.trustedTypes, $f58f44579a4747ac$var$e = $f58f44579a4747ac$var$s ? $f58f44579a4747ac$var$s.createPolicy("lit-html", {
     createHTML: (t)=>t
-}) : void 0, $f58f44579a4747ac$var$o = "$lit$", $f58f44579a4747ac$var$n = `lit$${(Math.random() + "").slice(9)}$`, $f58f44579a4747ac$var$l = "?" + $f58f44579a4747ac$var$n, $f58f44579a4747ac$var$h = `<${$f58f44579a4747ac$var$l}>`, $f58f44579a4747ac$var$r = document, $f58f44579a4747ac$var$d = ()=>$f58f44579a4747ac$var$r.createComment(""), $f58f44579a4747ac$var$u = (t)=>null === t || "object" != typeof t && "function" != typeof t, $f58f44579a4747ac$var$c = Array.isArray, $f58f44579a4747ac$var$v = (t)=>$f58f44579a4747ac$var$c(t) || "function" == typeof (null == t ? void 0 : t[Symbol.iterator]), $f58f44579a4747ac$var$a = "[ 	\n\f\r]", $f58f44579a4747ac$var$f = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, $f58f44579a4747ac$var$_ = /-->/g, $f58f44579a4747ac$var$m = />/g, $f58f44579a4747ac$var$p = RegExp(`>|${$f58f44579a4747ac$var$a}(?:([^\\s"'>=/]+)(${$f58f44579a4747ac$var$a}*=${$f58f44579a4747ac$var$a}*(?:[^ \t\n\f\r"'\`<>=]|("|')|))|$)`, "g"), $f58f44579a4747ac$var$g = /'/g, $f58f44579a4747ac$var$$ = /"/g, $f58f44579a4747ac$var$y = /^(?:script|style|textarea|title)$/i, $f58f44579a4747ac$var$w = (t)=>(i, ...s)=>({
+}) : void 0, $f58f44579a4747ac$var$o = "$lit$", $f58f44579a4747ac$var$n = `lit$${(Math.random() + "").slice(9)}$`, $f58f44579a4747ac$var$l = "?" + $f58f44579a4747ac$var$n, $f58f44579a4747ac$var$h = `<${$f58f44579a4747ac$var$l}>`, $f58f44579a4747ac$var$r = document, $f58f44579a4747ac$var$u = ()=>$f58f44579a4747ac$var$r.createComment(""), $f58f44579a4747ac$var$d = (t)=>null === t || "object" != typeof t && "function" != typeof t, $f58f44579a4747ac$var$c = Array.isArray, $f58f44579a4747ac$var$v = (t)=>$f58f44579a4747ac$var$c(t) || "function" == typeof (null == t ? void 0 : t[Symbol.iterator]), $f58f44579a4747ac$var$a = "[ 	\n\f\r]", $f58f44579a4747ac$var$f = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, $f58f44579a4747ac$var$_ = /-->/g, $f58f44579a4747ac$var$m = />/g, $f58f44579a4747ac$var$p = RegExp(`>|${$f58f44579a4747ac$var$a}(?:([^\\s"'>=/]+)(${$f58f44579a4747ac$var$a}*=${$f58f44579a4747ac$var$a}*(?:[^ \t\n\f\r"'\`<>=]|("|')|))|$)`, "g"), $f58f44579a4747ac$var$g = /'/g, $f58f44579a4747ac$var$$ = /"/g, $f58f44579a4747ac$var$y = /^(?:script|style|textarea|title)$/i, $f58f44579a4747ac$var$w = (t)=>(i, ...s)=>({
             _$litType$: t,
             strings: i,
             values: s
-        }), $f58f44579a4747ac$export$c0bb0b647f701bb5 = $f58f44579a4747ac$var$w(1), $f58f44579a4747ac$export$7ed1367e7fa1ad68 = $f58f44579a4747ac$var$w(2), $f58f44579a4747ac$export$9c068ae9cc5db4e8 = Symbol.for("lit-noChange"), $f58f44579a4747ac$export$45b790e32b2810ee = Symbol.for("lit-nothing"), $f58f44579a4747ac$var$E = new WeakMap, $f58f44579a4747ac$var$C = $f58f44579a4747ac$var$r.createTreeWalker($f58f44579a4747ac$var$r, 129, null, !1), $f58f44579a4747ac$var$P = (t, i)=>{
-    const s = t.length - 1, l = [];
-    let r, d = 2 === i ? "<svg>" : "", u = $f58f44579a4747ac$var$f;
+        }), $f58f44579a4747ac$export$c0bb0b647f701bb5 = $f58f44579a4747ac$var$w(1), $f58f44579a4747ac$export$7ed1367e7fa1ad68 = $f58f44579a4747ac$var$w(2), $f58f44579a4747ac$export$9c068ae9cc5db4e8 = Symbol.for("lit-noChange"), $f58f44579a4747ac$export$45b790e32b2810ee = Symbol.for("lit-nothing"), $f58f44579a4747ac$var$E = new WeakMap, $f58f44579a4747ac$var$C = $f58f44579a4747ac$var$r.createTreeWalker($f58f44579a4747ac$var$r, 129, null, !1);
+function $f58f44579a4747ac$var$P(t, i) {
+    if (!Array.isArray(t) || !t.hasOwnProperty("raw")) throw Error("invalid template strings array");
+    return void 0 !== $f58f44579a4747ac$var$e ? $f58f44579a4747ac$var$e.createHTML(i) : i;
+}
+const $f58f44579a4747ac$var$V = (t, i)=>{
+    const s = t.length - 1, e = [];
+    let l, r = 2 === i ? "<svg>" : "", u = $f58f44579a4747ac$var$f;
     for(let i = 0; i < s; i++){
         const s = t[i];
-        let e, c, v = -1, a = 0;
-        for(; a < s.length && (u.lastIndex = a, c = u.exec(s), null !== c);)a = u.lastIndex, u === $f58f44579a4747ac$var$f ? "!--" === c[1] ? u = $f58f44579a4747ac$var$_ : void 0 !== c[1] ? u = $f58f44579a4747ac$var$m : void 0 !== c[2] ? ($f58f44579a4747ac$var$y.test(c[2]) && (r = RegExp("</" + c[2], "g")), u = $f58f44579a4747ac$var$p) : void 0 !== c[3] && (u = $f58f44579a4747ac$var$p) : u === $f58f44579a4747ac$var$p ? ">" === c[0] ? (u = null != r ? r : $f58f44579a4747ac$var$f, v = -1) : void 0 === c[1] ? v = -2 : (v = u.lastIndex - c[2].length, e = c[1], u = void 0 === c[3] ? $f58f44579a4747ac$var$p : '"' === c[3] ? $f58f44579a4747ac$var$$ : $f58f44579a4747ac$var$g) : u === $f58f44579a4747ac$var$$ || u === $f58f44579a4747ac$var$g ? u = $f58f44579a4747ac$var$p : u === $f58f44579a4747ac$var$_ || u === $f58f44579a4747ac$var$m ? u = $f58f44579a4747ac$var$f : (u = $f58f44579a4747ac$var$p, r = void 0);
+        let d, c, v = -1, a = 0;
+        for(; a < s.length && (u.lastIndex = a, c = u.exec(s), null !== c);)a = u.lastIndex, u === $f58f44579a4747ac$var$f ? "!--" === c[1] ? u = $f58f44579a4747ac$var$_ : void 0 !== c[1] ? u = $f58f44579a4747ac$var$m : void 0 !== c[2] ? ($f58f44579a4747ac$var$y.test(c[2]) && (l = RegExp("</" + c[2], "g")), u = $f58f44579a4747ac$var$p) : void 0 !== c[3] && (u = $f58f44579a4747ac$var$p) : u === $f58f44579a4747ac$var$p ? ">" === c[0] ? (u = null != l ? l : $f58f44579a4747ac$var$f, v = -1) : void 0 === c[1] ? v = -2 : (v = u.lastIndex - c[2].length, d = c[1], u = void 0 === c[3] ? $f58f44579a4747ac$var$p : '"' === c[3] ? $f58f44579a4747ac$var$$ : $f58f44579a4747ac$var$g) : u === $f58f44579a4747ac$var$$ || u === $f58f44579a4747ac$var$g ? u = $f58f44579a4747ac$var$p : u === $f58f44579a4747ac$var$_ || u === $f58f44579a4747ac$var$m ? u = $f58f44579a4747ac$var$f : (u = $f58f44579a4747ac$var$p, l = void 0);
         const w = u === $f58f44579a4747ac$var$p && t[i + 1].startsWith("/>") ? " " : "";
-        d += u === $f58f44579a4747ac$var$f ? s + $f58f44579a4747ac$var$h : v >= 0 ? (l.push(e), s.slice(0, v) + $f58f44579a4747ac$var$o + s.slice(v) + $f58f44579a4747ac$var$n + w) : s + $f58f44579a4747ac$var$n + (-2 === v ? (l.push(void 0), i) : w);
+        r += u === $f58f44579a4747ac$var$f ? s + $f58f44579a4747ac$var$h : v >= 0 ? (e.push(d), s.slice(0, v) + $f58f44579a4747ac$var$o + s.slice(v) + $f58f44579a4747ac$var$n + w) : s + $f58f44579a4747ac$var$n + (-2 === v ? (e.push(void 0), i) : w);
     }
-    const c = d + (t[s] || "<?>") + (2 === i ? "</svg>" : "");
-    if (!Array.isArray(t) || !t.hasOwnProperty("raw")) throw Error("invalid template strings array");
     return [
-        void 0 !== $f58f44579a4747ac$var$e ? $f58f44579a4747ac$var$e.createHTML(c) : c,
-        l
+        $f58f44579a4747ac$var$P(t, r + (t[s] || "<?>") + (2 === i ? "</svg>" : "")),
+        e
     ];
 };
-class $f58f44579a4747ac$var$V {
-    constructor({ strings: t , _$litType$: i  }, e){
+class $f58f44579a4747ac$var$N {
+    constructor({ strings: t, _$litType$: i }, e){
         let h;
         this.parts = [];
-        let r = 0, u = 0;
-        const c = t.length - 1, v = this.parts, [a, f] = $f58f44579a4747ac$var$P(t, i);
-        if (this.el = $f58f44579a4747ac$var$V.createElement(a, e), $f58f44579a4747ac$var$C.currentNode = this.el.content, 2 === i) {
+        let r = 0, d = 0;
+        const c = t.length - 1, v = this.parts, [a, f] = $f58f44579a4747ac$var$V(t, i);
+        if (this.el = $f58f44579a4747ac$var$N.createElement(a, e), $f58f44579a4747ac$var$C.currentNode = this.el.content, 2 === i) {
             const t = this.el.content, i = t.firstChild;
             i.remove(), t.append(...i.childNodes);
         }
@@ -315,7 +318,7 @@ class $f58f44579a4747ac$var$V {
                 if (h.hasAttributes()) {
                     const t = [];
                     for (const i of h.getAttributeNames())if (i.endsWith($f58f44579a4747ac$var$o) || i.startsWith($f58f44579a4747ac$var$n)) {
-                        const s = f[u++];
+                        const s = f[d++];
                         if (t.push(i), void 0 !== s) {
                             const t = h.getAttribute(s.toLowerCase() + $f58f44579a4747ac$var$o).split($f58f44579a4747ac$var$n), i = /([.?@])?(.*)/.exec(s);
                             v.push({
@@ -323,7 +326,7 @@ class $f58f44579a4747ac$var$V {
                                 index: r,
                                 name: i[2],
                                 strings: t,
-                                ctor: "." === i[1] ? $f58f44579a4747ac$var$k : "?" === i[1] ? $f58f44579a4747ac$var$I : "@" === i[1] ? $f58f44579a4747ac$var$L : $f58f44579a4747ac$var$R
+                                ctor: "." === i[1] ? $f58f44579a4747ac$var$H : "?" === i[1] ? $f58f44579a4747ac$var$L : "@" === i[1] ? $f58f44579a4747ac$var$z : $f58f44579a4747ac$var$k
                             });
                         } else v.push({
                             type: 6,
@@ -336,11 +339,11 @@ class $f58f44579a4747ac$var$V {
                     const t = h.textContent.split($f58f44579a4747ac$var$n), i = t.length - 1;
                     if (i > 0) {
                         h.textContent = $f58f44579a4747ac$var$s ? $f58f44579a4747ac$var$s.emptyScript : "";
-                        for(let s = 0; s < i; s++)h.append(t[s], $f58f44579a4747ac$var$d()), $f58f44579a4747ac$var$C.nextNode(), v.push({
+                        for(let s = 0; s < i; s++)h.append(t[s], $f58f44579a4747ac$var$u()), $f58f44579a4747ac$var$C.nextNode(), v.push({
                             type: 2,
                             index: ++r
                         });
-                        h.append(t[i], $f58f44579a4747ac$var$d());
+                        h.append(t[i], $f58f44579a4747ac$var$u());
                     }
                 }
             } else if (8 === h.nodeType) {
@@ -364,14 +367,14 @@ class $f58f44579a4747ac$var$V {
         return s.innerHTML = t, s;
     }
 }
-function $f58f44579a4747ac$var$N(t, i, s = t, e) {
+function $f58f44579a4747ac$var$S(t, i, s = t, e) {
     var o, n, l, h;
     if (i === $f58f44579a4747ac$export$9c068ae9cc5db4e8) return i;
     let r = void 0 !== e ? null === (o = s._$Co) || void 0 === o ? void 0 : o[e] : s._$Cl;
-    const d = $f58f44579a4747ac$var$u(i) ? void 0 : i._$litDirective$;
-    return (null == r ? void 0 : r.constructor) !== d && (null === (n = null == r ? void 0 : r._$AO) || void 0 === n || n.call(r, !1), void 0 === d ? r = void 0 : (r = new d(t), r._$AT(t, s, e)), void 0 !== e ? (null !== (l = (h = s)._$Co) && void 0 !== l ? l : h._$Co = [])[e] = r : s._$Cl = r), void 0 !== r && (i = $f58f44579a4747ac$var$N(t, r._$AS(t, i.values), r, e)), i;
+    const u = $f58f44579a4747ac$var$d(i) ? void 0 : i._$litDirective$;
+    return (null == r ? void 0 : r.constructor) !== u && (null === (n = null == r ? void 0 : r._$AO) || void 0 === n || n.call(r, !1), void 0 === u ? r = void 0 : (r = new u(t), r._$AT(t, s, e)), void 0 !== e ? (null !== (l = (h = s)._$Co) && void 0 !== l ? l : h._$Co = [])[e] = r : s._$Cl = r), void 0 !== r && (i = $f58f44579a4747ac$var$S(t, r._$AS(t, i.values), r, e)), i;
 }
-class $f58f44579a4747ac$var$S {
+class $f58f44579a4747ac$var$M {
     constructor(t, i){
         this._$AV = [], this._$AN = void 0, this._$AD = t, this._$AM = i;
     }
@@ -383,15 +386,15 @@ class $f58f44579a4747ac$var$S {
     }
     u(t) {
         var i;
-        const { el: { content: s  } , parts: e  } = this._$AD, o = (null !== (i = null == t ? void 0 : t.creationScope) && void 0 !== i ? i : $f58f44579a4747ac$var$r).importNode(s, !0);
+        const { el: { content: s }, parts: e } = this._$AD, o = (null !== (i = null == t ? void 0 : t.creationScope) && void 0 !== i ? i : $f58f44579a4747ac$var$r).importNode(s, !0);
         $f58f44579a4747ac$var$C.currentNode = o;
-        let n = $f58f44579a4747ac$var$C.nextNode(), l = 0, h = 0, d = e[0];
-        for(; void 0 !== d;){
-            if (l === d.index) {
+        let n = $f58f44579a4747ac$var$C.nextNode(), l = 0, h = 0, u = e[0];
+        for(; void 0 !== u;){
+            if (l === u.index) {
                 let i;
-                2 === d.type ? i = new $f58f44579a4747ac$var$M(n, n.nextSibling, this, t) : 1 === d.type ? i = new d.ctor(n, d.name, d.strings, this, t) : 6 === d.type && (i = new $f58f44579a4747ac$var$z(n, this, t)), this._$AV.push(i), d = e[++h];
+                2 === u.type ? i = new $f58f44579a4747ac$var$R(n, n.nextSibling, this, t) : 1 === u.type ? i = new u.ctor(n, u.name, u.strings, this, t) : 6 === u.type && (i = new $f58f44579a4747ac$var$Z(n, this, t)), this._$AV.push(i), u = e[++h];
             }
-            l !== (null == d ? void 0 : d.index) && (n = $f58f44579a4747ac$var$C.nextNode(), l++);
+            l !== (null == u ? void 0 : u.index) && (n = $f58f44579a4747ac$var$C.nextNode(), l++);
         }
         return $f58f44579a4747ac$var$C.currentNode = $f58f44579a4747ac$var$r, o;
     }
@@ -400,7 +403,7 @@ class $f58f44579a4747ac$var$S {
         for (const s of this._$AV)void 0 !== s && (void 0 !== s.strings ? (s._$AI(t, s, i), i += s.strings.length - 2) : s._$AI(t[i])), i++;
     }
 }
-class $f58f44579a4747ac$var$M {
+class $f58f44579a4747ac$var$R {
     constructor(t, i, s, e){
         var o;
         this.type = 2, this._$AH = $f58f44579a4747ac$export$45b790e32b2810ee, this._$AN = void 0, this._$AA = t, this._$AB = i, this._$AM = s, this.options = e, this._$Cp = null === (o = null == e ? void 0 : e.isConnected) || void 0 === o || o;
@@ -421,7 +424,7 @@ class $f58f44579a4747ac$var$M {
         return this._$AB;
     }
     _$AI(t, i = this) {
-        t = $f58f44579a4747ac$var$N(this, t, i), $f58f44579a4747ac$var$u(t) ? t === $f58f44579a4747ac$export$45b790e32b2810ee || null == t || "" === t ? (this._$AH !== $f58f44579a4747ac$export$45b790e32b2810ee && this._$AR(), this._$AH = $f58f44579a4747ac$export$45b790e32b2810ee) : t !== this._$AH && t !== $f58f44579a4747ac$export$9c068ae9cc5db4e8 && this._(t) : void 0 !== t._$litType$ ? this.g(t) : void 0 !== t.nodeType ? this.$(t) : $f58f44579a4747ac$var$v(t) ? this.T(t) : this._(t);
+        t = $f58f44579a4747ac$var$S(this, t, i), $f58f44579a4747ac$var$d(t) ? t === $f58f44579a4747ac$export$45b790e32b2810ee || null == t || "" === t ? (this._$AH !== $f58f44579a4747ac$export$45b790e32b2810ee && this._$AR(), this._$AH = $f58f44579a4747ac$export$45b790e32b2810ee) : t !== this._$AH && t !== $f58f44579a4747ac$export$9c068ae9cc5db4e8 && this._(t) : void 0 !== t._$litType$ ? this.g(t) : void 0 !== t.nodeType ? this.$(t) : $f58f44579a4747ac$var$v(t) ? this.T(t) : this._(t);
     }
     k(t) {
         return this._$AA.parentNode.insertBefore(t, this._$AB);
@@ -430,26 +433,26 @@ class $f58f44579a4747ac$var$M {
         this._$AH !== t && (this._$AR(), this._$AH = this.k(t));
     }
     _(t) {
-        this._$AH !== $f58f44579a4747ac$export$45b790e32b2810ee && $f58f44579a4747ac$var$u(this._$AH) ? this._$AA.nextSibling.data = t : this.$($f58f44579a4747ac$var$r.createTextNode(t)), this._$AH = t;
+        this._$AH !== $f58f44579a4747ac$export$45b790e32b2810ee && $f58f44579a4747ac$var$d(this._$AH) ? this._$AA.nextSibling.data = t : this.$($f58f44579a4747ac$var$r.createTextNode(t)), this._$AH = t;
     }
     g(t) {
         var i;
-        const { values: s , _$litType$: e  } = t, o = "number" == typeof e ? this._$AC(t) : (void 0 === e.el && (e.el = $f58f44579a4747ac$var$V.createElement(e.h, this.options)), e);
+        const { values: s, _$litType$: e } = t, o = "number" == typeof e ? this._$AC(t) : (void 0 === e.el && (e.el = $f58f44579a4747ac$var$N.createElement($f58f44579a4747ac$var$P(e.h, e.h[0]), this.options)), e);
         if ((null === (i = this._$AH) || void 0 === i ? void 0 : i._$AD) === o) this._$AH.v(s);
         else {
-            const t = new $f58f44579a4747ac$var$S(o, this), i = t.u(this.options);
+            const t = new $f58f44579a4747ac$var$M(o, this), i = t.u(this.options);
             t.v(s), this.$(i), this._$AH = t;
         }
     }
     _$AC(t) {
         let i = $f58f44579a4747ac$var$E.get(t.strings);
-        return void 0 === i && $f58f44579a4747ac$var$E.set(t.strings, i = new $f58f44579a4747ac$var$V(t)), i;
+        return void 0 === i && $f58f44579a4747ac$var$E.set(t.strings, i = new $f58f44579a4747ac$var$N(t)), i;
     }
     T(t) {
         $f58f44579a4747ac$var$c(this._$AH) || (this._$AH = [], this._$AR());
         const i = this._$AH;
         let s, e = 0;
-        for (const o of t)e === i.length ? i.push(s = new $f58f44579a4747ac$var$M(this.k($f58f44579a4747ac$var$d()), this.k($f58f44579a4747ac$var$d()), this, this.options)) : s = i[e], s._$AI(o), e++;
+        for (const o of t)e === i.length ? i.push(s = new $f58f44579a4747ac$var$R(this.k($f58f44579a4747ac$var$u()), this.k($f58f44579a4747ac$var$u()), this, this.options)) : s = i[e], s._$AI(o), e++;
         e < i.length && (this._$AR(s && s._$AB.nextSibling, e), i.length = e);
     }
     _$AR(t = this._$AA.nextSibling, i) {
@@ -464,7 +467,7 @@ class $f58f44579a4747ac$var$M {
         void 0 === this._$AM && (this._$Cp = t, null === (i = this._$AP) || void 0 === i || i.call(this, t));
     }
 }
-class $f58f44579a4747ac$var$R {
+class $f58f44579a4747ac$var$k {
     constructor(t, i, s, e, o){
         this.type = 1, this._$AH = $f58f44579a4747ac$export$45b790e32b2810ee, this._$AN = void 0, this.element = t, this.name = i, this._$AM = e, this.options = o, s.length > 2 || "" !== s[0] || "" !== s[1] ? (this._$AH = Array(s.length - 1).fill(new String), this.strings = s) : this._$AH = $f58f44579a4747ac$export$45b790e32b2810ee;
     }
@@ -477,11 +480,11 @@ class $f58f44579a4747ac$var$R {
     _$AI(t, i = this, s, e) {
         const o = this.strings;
         let n = !1;
-        if (void 0 === o) t = $f58f44579a4747ac$var$N(this, t, i, 0), n = !$f58f44579a4747ac$var$u(t) || t !== this._$AH && t !== $f58f44579a4747ac$export$9c068ae9cc5db4e8, n && (this._$AH = t);
+        if (void 0 === o) t = $f58f44579a4747ac$var$S(this, t, i, 0), n = !$f58f44579a4747ac$var$d(t) || t !== this._$AH && t !== $f58f44579a4747ac$export$9c068ae9cc5db4e8, n && (this._$AH = t);
         else {
             const e = t;
             let l, h;
-            for(t = o[0], l = 0; l < o.length - 1; l++)h = $f58f44579a4747ac$var$N(this, e[s + l], i, l), h === $f58f44579a4747ac$export$9c068ae9cc5db4e8 && (h = this._$AH[l]), n || (n = !$f58f44579a4747ac$var$u(h) || h !== this._$AH[l]), h === $f58f44579a4747ac$export$45b790e32b2810ee ? t = $f58f44579a4747ac$export$45b790e32b2810ee : t !== $f58f44579a4747ac$export$45b790e32b2810ee && (t += (null != h ? h : "") + o[l + 1]), this._$AH[l] = h;
+            for(t = o[0], l = 0; l < o.length - 1; l++)h = $f58f44579a4747ac$var$S(this, e[s + l], i, l), h === $f58f44579a4747ac$export$9c068ae9cc5db4e8 && (h = this._$AH[l]), n || (n = !$f58f44579a4747ac$var$d(h) || h !== this._$AH[l]), h === $f58f44579a4747ac$export$45b790e32b2810ee ? t = $f58f44579a4747ac$export$45b790e32b2810ee : t !== $f58f44579a4747ac$export$45b790e32b2810ee && (t += (null != h ? h : "") + o[l + 1]), this._$AH[l] = h;
         }
         n && !e && this.j(t);
     }
@@ -489,7 +492,7 @@ class $f58f44579a4747ac$var$R {
         t === $f58f44579a4747ac$export$45b790e32b2810ee ? this.element.removeAttribute(this.name) : this.element.setAttribute(this.name, null != t ? t : "");
     }
 }
-class $f58f44579a4747ac$var$k extends $f58f44579a4747ac$var$R {
+class $f58f44579a4747ac$var$H extends $f58f44579a4747ac$var$k {
     constructor(){
         super(...arguments), this.type = 3;
     }
@@ -497,22 +500,22 @@ class $f58f44579a4747ac$var$k extends $f58f44579a4747ac$var$R {
         this.element[this.name] = t === $f58f44579a4747ac$export$45b790e32b2810ee ? void 0 : t;
     }
 }
-const $f58f44579a4747ac$var$H = $f58f44579a4747ac$var$s ? $f58f44579a4747ac$var$s.emptyScript : "";
-class $f58f44579a4747ac$var$I extends $f58f44579a4747ac$var$R {
+const $f58f44579a4747ac$var$I = $f58f44579a4747ac$var$s ? $f58f44579a4747ac$var$s.emptyScript : "";
+class $f58f44579a4747ac$var$L extends $f58f44579a4747ac$var$k {
     constructor(){
         super(...arguments), this.type = 4;
     }
     j(t) {
-        t && t !== $f58f44579a4747ac$export$45b790e32b2810ee ? this.element.setAttribute(this.name, $f58f44579a4747ac$var$H) : this.element.removeAttribute(this.name);
+        t && t !== $f58f44579a4747ac$export$45b790e32b2810ee ? this.element.setAttribute(this.name, $f58f44579a4747ac$var$I) : this.element.removeAttribute(this.name);
     }
 }
-class $f58f44579a4747ac$var$L extends $f58f44579a4747ac$var$R {
+class $f58f44579a4747ac$var$z extends $f58f44579a4747ac$var$k {
     constructor(t, i, s, e, o){
         super(t, i, s, e, o), this.type = 5;
     }
     _$AI(t, i = this) {
         var s;
-        if ((t = null !== (s = $f58f44579a4747ac$var$N(this, t, i, 0)) && void 0 !== s ? s : $f58f44579a4747ac$export$45b790e32b2810ee) === $f58f44579a4747ac$export$9c068ae9cc5db4e8) return;
+        if ((t = null !== (s = $f58f44579a4747ac$var$S(this, t, i, 0)) && void 0 !== s ? s : $f58f44579a4747ac$export$45b790e32b2810ee) === $f58f44579a4747ac$export$9c068ae9cc5db4e8) return;
         const e = this._$AH, o = t === $f58f44579a4747ac$export$45b790e32b2810ee && e !== $f58f44579a4747ac$export$45b790e32b2810ee || t.capture !== e.capture || t.once !== e.once || t.passive !== e.passive, n = t !== $f58f44579a4747ac$export$45b790e32b2810ee && (e === $f58f44579a4747ac$export$45b790e32b2810ee || o);
         o && this.element.removeEventListener(this.name, this, e), n && this.element.addEventListener(this.name, this, t), this._$AH = t;
     }
@@ -521,7 +524,7 @@ class $f58f44579a4747ac$var$L extends $f58f44579a4747ac$var$R {
         "function" == typeof this._$AH ? this._$AH.call(null !== (s = null === (i = this.options) || void 0 === i ? void 0 : i.host) && void 0 !== s ? s : this.element, t) : this._$AH.handleEvent(t);
     }
 }
-class $f58f44579a4747ac$var$z {
+class $f58f44579a4747ac$var$Z {
     constructor(t, i, s){
         this.element = t, this.type = 6, this._$AN = void 0, this._$AM = i, this.options = s;
     }
@@ -529,7 +532,7 @@ class $f58f44579a4747ac$var$z {
         return this._$AM._$AU;
     }
     _$AI(t) {
-        $f58f44579a4747ac$var$N(this, t);
+        $f58f44579a4747ac$var$S(this, t);
     }
 }
 const $f58f44579a4747ac$export$8613d1ca9052b22e = {
@@ -537,25 +540,25 @@ const $f58f44579a4747ac$export$8613d1ca9052b22e = {
     P: $f58f44579a4747ac$var$n,
     A: $f58f44579a4747ac$var$l,
     C: 1,
-    M: $f58f44579a4747ac$var$P,
-    L: $f58f44579a4747ac$var$S,
+    M: $f58f44579a4747ac$var$V,
+    L: $f58f44579a4747ac$var$M,
     D: $f58f44579a4747ac$var$v,
-    R: $f58f44579a4747ac$var$N,
-    I: $f58f44579a4747ac$var$M,
-    V: $f58f44579a4747ac$var$R,
-    H: $f58f44579a4747ac$var$I,
-    N: $f58f44579a4747ac$var$L,
-    U: $f58f44579a4747ac$var$k,
-    F: $f58f44579a4747ac$var$z
-}, $f58f44579a4747ac$var$j = $f58f44579a4747ac$var$i.litHtmlPolyfillSupport;
-null == $f58f44579a4747ac$var$j || $f58f44579a4747ac$var$j($f58f44579a4747ac$var$V, $f58f44579a4747ac$var$M), (null !== ($f58f44579a4747ac$var$t = $f58f44579a4747ac$var$i.litHtmlVersions) && void 0 !== $f58f44579a4747ac$var$t ? $f58f44579a4747ac$var$t : $f58f44579a4747ac$var$i.litHtmlVersions = []).push("2.7.4");
+    R: $f58f44579a4747ac$var$S,
+    I: $f58f44579a4747ac$var$R,
+    V: $f58f44579a4747ac$var$k,
+    H: $f58f44579a4747ac$var$L,
+    N: $f58f44579a4747ac$var$z,
+    U: $f58f44579a4747ac$var$H,
+    F: $f58f44579a4747ac$var$Z
+}, $f58f44579a4747ac$var$B = $f58f44579a4747ac$var$i.litHtmlPolyfillSupport;
+null == $f58f44579a4747ac$var$B || $f58f44579a4747ac$var$B($f58f44579a4747ac$var$N, $f58f44579a4747ac$var$R), (null !== ($f58f44579a4747ac$var$t = $f58f44579a4747ac$var$i.litHtmlVersions) && void 0 !== $f58f44579a4747ac$var$t ? $f58f44579a4747ac$var$t : $f58f44579a4747ac$var$i.litHtmlVersions = []).push("2.7.5");
 const $f58f44579a4747ac$export$b3890eb0ae9dca99 = (t, i, s)=>{
     var e, o;
     const n = null !== (e = null == s ? void 0 : s.renderBefore) && void 0 !== e ? e : i;
     let l = n._$litPart$;
     if (void 0 === l) {
         const t = null !== (o = null == s ? void 0 : s.renderBefore) && void 0 !== o ? o : null;
-        n._$litPart$ = l = new $f58f44579a4747ac$var$M(i.insertBefore($f58f44579a4747ac$var$d(), t), t, void 0, null != s ? s : {});
+        n._$litPart$ = l = new $f58f44579a4747ac$var$R(i.insertBefore($f58f44579a4747ac$var$u(), t), t, void 0, null != s ? s : {});
     }
     return l._$AI(t), l;
 };
@@ -8378,6 +8381,496 @@ class $bf513b85805031e6$export$83525664c1777945 extends (0, $ab210b2da7b39b9d$ex
 
 
 
+
+class $cb6340c6977e7b78$export$c8e5c1392561c508 extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
+    static get properties() {
+        return {
+            hide: {
+                type: Boolean,
+                attribute: "hide"
+            },
+            scale: {
+                type: Number,
+                attribute: "scale"
+            },
+            backgroundColor: {
+                type: String,
+                attribute: "background-color"
+            },
+            outline: {
+                type: Boolean,
+                attribute: "outline"
+            },
+            fill: {
+                type: String,
+                attribute: "fill"
+            },
+            mdiIcon: {
+                type: String,
+                attribute: "mdi-icon"
+            },
+            rotate: {
+                type: Boolean,
+                attribute: "rotate"
+            },
+            rotateDuration: {
+                type: Number,
+                attribute: "rotate-duration"
+            },
+            viewbox: {
+                type: String,
+                attribute: "viewbox"
+            }
+        };
+    }
+    constructor(){
+        super();
+        this.hide = false;
+        this.scale = 60;
+        this.backgroundColor = "var(--primary-color)";
+        this.outline = "0.2em solid white";
+        this.fill = "white";
+        this.mdiIcon = (0, $04557c061247a0a6$export$1174b26a158cd594);
+        this.rotate = false;
+        this.rotateDuration = 2;
+        this.viewbox = "0 0 24 24";
+    }
+    static styles = (0, $def2de46b9306e8a$export$dbf350e5966cf602)`
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(359deg);
+      }
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+    }
+  `;
+    render() {
+        return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+      <style>
+        .container {
+          display: ${this.hide ? "none" : "flex"};
+        }
+        svg {
+          width: ${this.scale}%;
+          height: ${this.scale}%;
+          background-color: ${this.backgroundColor};
+          outline: ${this.outline};
+          border-radius: 50%;
+        }
+        path {
+          fill: ${this.fill};
+        }
+
+        .rotate {
+          animation: rotation ${this.rotateDuration}s infinite linear;
+        }
+      </style>
+      <div class="container">
+        <svg viewBox="${this.viewbox}" class="${this.rotate ? "rotate" : ""}">
+          <path d="${this.mdiIcon}"></path>
+        </svg>
+      </div>
+    `;
+    }
+}
+customElements.define("action-icon", $cb6340c6977e7b78$export$c8e5c1392561c508);
+class $cb6340c6977e7b78$export$cfc7921d29ef7b80 extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
+    //   pump_speed_icons = [mdiNumeric0, mdiNumeric1, mdiNumeric2];
+    static get properties() {
+        return {
+            name: {
+                type: String,
+                attribute: "name"
+            },
+            // Icons (String)
+            buttonIcon: {
+                type: String,
+                attribute: "button-icon"
+            },
+            action1Icon: {
+                type: String,
+                attribute: "action1-icon"
+            },
+            action2Icon: {
+                type: String,
+                attribute: "action2-icon"
+            },
+            action3Icon: {
+                type: String,
+                attribute: "action3-icon"
+            },
+            action4Icon: {
+                type: String,
+                attribute: "action4-icon"
+            },
+            // Hide (Boolean)
+            buttonHide: {
+                type: Boolean,
+                attribute: "button-hide"
+            },
+            action1Hide: {
+                type: Boolean,
+                attribute: "action1-hide"
+            },
+            action2Hide: {
+                type: Boolean,
+                attribute: "action2-hide"
+            },
+            action3Hide: {
+                type: Boolean,
+                attribute: "action3-hide"
+            },
+            action4Hide: {
+                type: Boolean,
+                attribute: "action4-hide"
+            },
+            // Background color (String)
+            buttonBackgroundColor: {
+                type: String,
+                attribute: "button-background-color"
+            },
+            action1BackgroundColor: {
+                type: String,
+                attribute: "action1-background-color"
+            },
+            action2BackgroundColor: {
+                type: String,
+                attribute: "action2-background-color"
+            },
+            action3BackgroundColor: {
+                type: String,
+                attribute: "action3-background-color"
+            },
+            action4BackgroundColor: {
+                type: String,
+                attribute: "action4-background-color"
+            },
+            // Fill   (String)
+            buttonFill: {
+                type: String,
+                attribute: "button-fill"
+            },
+            action1Fill: {
+                type: String,
+                attribute: "action1-fill"
+            },
+            action2Fill: {
+                type: String,
+                attribute: "action2-fill"
+            },
+            action3Fill: {
+                type: String,
+                attribute: "action3-fill"
+            },
+            action4Fill: {
+                type: String,
+                attribute: "action4-fill"
+            },
+            // Rotate (Boolean)
+            buttonRotate: {
+                type: Boolean,
+                attribute: "button-rotate"
+            },
+            action1Rotate: {
+                type: Boolean,
+                attribute: "action1-rotate"
+            },
+            action2Rotate: {
+                type: Boolean,
+                attribute: "action2-rotate"
+            },
+            action3Rotate: {
+                type: Boolean,
+                attribute: "action3-rotate"
+            },
+            action4Rotate: {
+                type: Boolean,
+                attribute: "action4-rotate"
+            },
+            // Rotate Duration (Number)
+            buttonRotateDuration: {
+                type: Number,
+                attribute: "button-rotate-duration"
+            },
+            action1RotateDuration: {
+                type: Number,
+                attribute: "action1-rotate-duration"
+            },
+            action2RotateDuration: {
+                type: Number,
+                attribute: "action2-rotate-duration"
+            },
+            action3RotateDuration: {
+                type: Number,
+                attribute: "action3-rotate-duration"
+            },
+            action4RotateDuration: {
+                type: Number,
+                attribute: "action4-rotate-duration"
+            },
+            // viewBox (String)
+            buttonViewBox: {
+                type: String,
+                attribute: "button-viewbox"
+            },
+            action1ViewBox: {
+                type: String,
+                attribute: "action1-viewbox"
+            },
+            action2ViewBox: {
+                type: String,
+                attribute: "action2-viewbox"
+            },
+            action3ViewBox: {
+                type: String,
+                attribute: "action3-viewbox"
+            },
+            action4ViewBox: {
+                type: String,
+                attribute: "action4-viewbox"
+            }
+        };
+    }
+    constructor(){
+        super();
+        this.name = "action-button";
+        // Hide
+        this.buttonHide = false;
+        this.action1Hide = false;
+        this.action2Hide = false;
+        this.action3Hide = false;
+        this.action4Hide = false;
+        // Background color
+        this.buttonBackgroundColor = "var(--primary-color)";
+        this.action1BackgroundColor = "var(--primary-color)";
+        this.action2BackgroundColor = "var(--primary-color)";
+        this.action3BackgroundColor = "var(--primary-color)";
+        this.action4BackgroundColor = "var(--primary-color)";
+        // Fill
+        this.buttonFill = "white";
+        this.action1Fill = "white";
+        this.action2Fill = "white";
+        this.action3Fill = "white";
+        this.action4Fill = "white";
+        // Rotate
+        this.buttonRotate = false;
+        this.action1Rotate = false;
+        this.action2Rotate = false;
+        this.action3Rotate = false;
+        this.action4Rotate = false;
+        // Rotate Duration
+        this.buttonRotateDuration = 2;
+        this.action1RotateDuration = 2;
+        this.action2RotateDuration = 2;
+        this.action3RotateDuration = 2;
+        this.action4RotateDuration = 2;
+        // viewBox
+        this.buttonViewBox = "0 0 24 24";
+        this.action1ViewBox = "0 0 24 24";
+        this.action2ViewBox = "0 0 24 24";
+        this.action3ViewBox = "0 0 24 24";
+        this.action4ViewBox = "0 0 24 24";
+    }
+    static styles = (0, $def2de46b9306e8a$export$dbf350e5966cf602)`
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    action-icon {
+      width: 100%;
+      height: 100%;
+    }
+    .action {
+      width: 2.5em;
+      height: 2.5em;
+
+      position: absolute;
+    }
+    .action.top-right {
+      top: 1em;
+      right: 1em;
+    }
+    .action.top-left {
+      top: 1em;
+      left: 1em;
+    }
+    .action.bottom-right {
+      bottom: 1em;
+      right: 1em;
+    }
+    .action.bottom-left {
+      bottom: 1em;
+      left: 1em;
+    }
+  `;
+    render() {
+        return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+      <div class="container">
+        <long-press event-prefix="${this.name}-button">
+          <slot name="custom-button"
+            ><action-icon
+              class="main"
+              mdi-icon="${this.buttonIcon}"
+              background-color="${this.buttonBackgroundColor}"
+              fill="${this.buttonFill}"
+              ?rotate="${this.buttonRotate}"
+              rotate-duration="${this.buttonRotateDuration}"
+              viewbox="${this.buttonViewBox}"
+            ></action-icon
+          ></slot>
+        </long-press>
+        <div class="action top-right">
+          <action-icon
+            ?hide="${this.action1Hide}"
+            mdi-icon="${this.action1Icon}"
+            background-color="${this.action1BackgroundColor}"
+            fill="${this.action1Fill}"
+            scale="80"
+            ?rotate="${this.action1Rotate}"
+            rotate-duration="${this.action1RotateDuration}"
+            viewbox="${this.action1ViewBox}"
+          ></action-icon>
+        </div>
+        <div class="action top-left">
+          <action-icon
+            ?hide="${this.action2Hide}"
+            mdi-icon="${this.action2Icon}"
+            background-color="${this.action2BackgroundColor}"
+            fill="${this.action2Fill}"
+            scale="80"
+            ?rotate="${this.action2Rotate}"
+            rotate-duration="${this.action2RotateDuration}"
+            viewbox="${this.action2ViewBox}"
+          ></action-icon>
+        </div>
+        <div class="action bottom-right">
+          <action-icon
+            ?hide="${this.action3Hide}"
+            mdi-icon="${this.action3Icon}"
+            background-color="${this.action3BackgroundColor}"
+            fill="${this.action3Fill}"
+            scale="80"
+            ?rotate="${this.action3Rotate}"
+            rotate-duration="${this.action3RotateDuration}"
+            viewbox="${this.action3ViewBox}"
+          ></action-icon>
+        </div>
+        <div class="action bottom-left">
+          <action-icon
+            ?hide="${this.action4Hide}"
+            mdi-icon="${this.action4Icon}"
+            background-color="${this.action4BackgroundColor}"
+            fill="${this.action4Fill}"
+            scale="80"
+            ?rotate="${this.action4Rotate}"
+            rotate-duration="${this.action4RotateDuration}"
+            viewbox="${this.action4ViewBox}"
+          ></action-icon>
+        </div>
+      </div>
+    `;
+    }
+}
+
+
+
+class $0e09245fe9f9b9b2$export$abc17b74d3a8ecae extends PointerEvent {
+    #startTimeStamp;
+    get startTimeStamp() {
+        return this.#startTimeStamp;
+    }
+    constructor(eventName, init){
+        super(eventName, {
+            ...init,
+            bubbles: true,
+            composed: true
+        });
+        this.#startTimeStamp = init.startTimeStamp;
+    }
+}
+const $0e09245fe9f9b9b2$var$DEFAULT_LONG_PRESS_DELAY = 500;
+class $0e09245fe9f9b9b2$export$6ca9e64bec031b7e extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
+    static properties = {
+        delay: {
+            type: Number
+        },
+        eventPrefix: {
+            type: String,
+            attribute: "event-prefix"
+        }
+    };
+    /**
+   * The delay for waiting for long press
+   */ delay = $0e09245fe9f9b9b2$var$DEFAULT_LONG_PRESS_DELAY;
+    eventPrefix = "default";
+    connectedCallback() {
+        // console.log("long-press-element: connectedCallback() called.");
+        super.connectedCallback();
+        this.addEventListener("pointerdown", this.#pointerDownHandler);
+        this.addEventListener("pointerup", this.#longPressAbortHandler);
+        this.addEventListener("pointerleave", this.#longPressAbortHandler);
+    }
+    disconnectedCallback() {
+        // console.log("long-press-element: disconnectedCallback() called.");
+        super.disconnectedCallback();
+        this.removeEventListener("pointerdown", this.#pointerDownHandler);
+        this.removeEventListener("pointerup", this.#longPressAbortHandler);
+        this.removeEventListener("pointerleave", this.#longPressAbortHandler);
+    }
+    render() {
+        // console.log("long-press-element: render() called.");
+        return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<slot></slot>`;
+    }
+    #pointerDownTimeout = {};
+    #pointerDownHandler(event) {
+        const { target: target, pointerId: pointerId } = event;
+        const init = {
+            ...event,
+            startTimeStamp: event.timeStamp
+        };
+        this.#pointerDownTimeout[pointerId] = this.ownerDocument.defaultView.setTimeout(()=>{
+            delete this.#pointerDownTimeout[pointerId];
+            console.log("event:", `${this.eventPrefix}-long-press`);
+            const longPress = new $0e09245fe9f9b9b2$export$abc17b74d3a8ecae(`${this.eventPrefix}-long-press`, init);
+            target.dispatchEvent(longPress);
+        }, this.delay || $0e09245fe9f9b9b2$var$DEFAULT_LONG_PRESS_DELAY);
+    }
+    #longPressAbortHandler(event) {
+        let pointerId = event.pointerId;
+        // console.log("long-press-element: #longPressAbortHandler() called.", event);
+        // If already timed out, this will do nothing
+        if (this.#pointerDownTimeout[pointerId]) {
+            console.log("event:", `${this.eventPrefix}-click`);
+            const longPress = new $0e09245fe9f9b9b2$export$abc17b74d3a8ecae(`${this.eventPrefix}-click`, {
+                ...event,
+                startTimeStamp: event.timeStamp
+            });
+            event.target.dispatchEvent(longPress);
+            this.ownerDocument.defaultView.clearTimeout(this.#pointerDownTimeout[pointerId]);
+            delete this.#pointerDownTimeout[pointerId];
+        }
+    }
+    constructor(){
+        super();
+    // console.log("long-press-element: constructor() called.");
+    }
+}
+
+
+
+
+
 class $df774762052b2d8a$export$16e5ac37e5bee1fc extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
     static styles = (0, $def2de46b9306e8a$export$dbf350e5966cf602)`
     /* svg {
@@ -8835,410 +9328,6 @@ class $e46106877f0a0dd4$export$13ee1d2285084470 extends (0, $ab210b2da7b39b9d$ex
 
 
 
-
-class $6883c1461fed9e4e$export$c8e5c1392561c508 extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
-    static get properties() {
-        return {
-            hide: {
-                type: Boolean,
-                attribute: "hide"
-            },
-            scale: {
-                type: Number,
-                attribute: "scale"
-            },
-            backgroundColor: {
-                type: String,
-                attribute: "background-color"
-            },
-            outline: {
-                type: Boolean,
-                attribute: "outline"
-            },
-            fill: {
-                type: String,
-                attribute: "fill"
-            },
-            mdiIcon: {
-                type: String,
-                attribute: "mdi-icon"
-            },
-            rotate: {
-                type: Boolean,
-                attribute: "rotate"
-            },
-            rotateDuration: {
-                type: Number,
-                attribute: "rotate-duration"
-            },
-            viewbox: {
-                type: String,
-                attribute: "viewbox"
-            }
-        };
-    }
-    constructor(){
-        super();
-        this.hide = false;
-        this.scale = 60;
-        this.backgroundColor = "var(--primary-color)";
-        this.outline = "0.2em solid white";
-        this.fill = "white";
-        this.mdiIcon = (0, $04557c061247a0a6$export$1174b26a158cd594);
-        this.rotate = false;
-        this.rotateDuration = 2;
-        this.viewbox = "0 0 24 24";
-    }
-    static styles = (0, $def2de46b9306e8a$export$dbf350e5966cf602)`
-    @keyframes rotation {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(359deg);
-      }
-    }
-
-    .container {
-      width: 100%;
-      height: 100%;
-
-      flex-wrap: wrap;
-      align-content: center;
-      justify-content: center;
-    }
-  `;
-    render() {
-        return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
-      <style>
-        .container {
-          display: ${this.hide ? "none" : "flex"};
-        }
-        svg {
-          width: ${this.scale}%;
-          height: ${this.scale}%;
-          background-color: ${this.backgroundColor};
-          outline: ${this.outline};
-          border-radius: 50%;
-        }
-        path {
-          fill: ${this.fill};
-        }
-
-        .rotate {
-          animation: rotation ${this.rotateDuration}s infinite linear;
-        }
-      </style>
-      <div class="container">
-        <svg viewBox="${this.viewbox}" class="${this.rotate ? "rotate" : ""}">
-          <path d="${this.mdiIcon}"></path>
-        </svg>
-      </div>
-    `;
-    }
-}
-customElements.define("action-icon", $6883c1461fed9e4e$export$c8e5c1392561c508);
-class $6883c1461fed9e4e$export$cfc7921d29ef7b80 extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
-    //   pump_speed_icons = [mdiNumeric0, mdiNumeric1, mdiNumeric2];
-    static get properties() {
-        return {
-            name: {
-                type: String,
-                attribute: "name"
-            },
-            // Icons (String)
-            buttonIcon: {
-                type: String,
-                attribute: "button-icon"
-            },
-            action1Icon: {
-                type: String,
-                attribute: "action1-icon"
-            },
-            action2Icon: {
-                type: String,
-                attribute: "action2-icon"
-            },
-            action3Icon: {
-                type: String,
-                attribute: "action3-icon"
-            },
-            action4Icon: {
-                type: String,
-                attribute: "action4-icon"
-            },
-            // Hide (Boolean)
-            buttonHide: {
-                type: Boolean,
-                attribute: "button-hide"
-            },
-            action1Hide: {
-                type: Boolean,
-                attribute: "action1-hide"
-            },
-            action2Hide: {
-                type: Boolean,
-                attribute: "action2-hide"
-            },
-            action3Hide: {
-                type: Boolean,
-                attribute: "action3-hide"
-            },
-            action4Hide: {
-                type: Boolean,
-                attribute: "action4-hide"
-            },
-            // Background color (String)
-            buttonBackgroundColor: {
-                type: String,
-                attribute: "button-background-color"
-            },
-            action1BackgroundColor: {
-                type: String,
-                attribute: "action1-background-color"
-            },
-            action2BackgroundColor: {
-                type: String,
-                attribute: "action2-background-color"
-            },
-            action3BackgroundColor: {
-                type: String,
-                attribute: "action3-background-color"
-            },
-            action4BackgroundColor: {
-                type: String,
-                attribute: "action4-background-color"
-            },
-            // Fill   (String)
-            buttonFill: {
-                type: String,
-                attribute: "button-fill"
-            },
-            action1Fill: {
-                type: String,
-                attribute: "action1-fill"
-            },
-            action2Fill: {
-                type: String,
-                attribute: "action2-fill"
-            },
-            action3Fill: {
-                type: String,
-                attribute: "action3-fill"
-            },
-            action4Fill: {
-                type: String,
-                attribute: "action4-fill"
-            },
-            // Rotate (Boolean)
-            buttonRotate: {
-                type: Boolean,
-                attribute: "button-rotate"
-            },
-            action1Rotate: {
-                type: Boolean,
-                attribute: "action1-rotate"
-            },
-            action2Rotate: {
-                type: Boolean,
-                attribute: "action2-rotate"
-            },
-            action3Rotate: {
-                type: Boolean,
-                attribute: "action3-rotate"
-            },
-            action4Rotate: {
-                type: Boolean,
-                attribute: "action4-rotate"
-            },
-            // Rotate Duration (Number)
-            buttonRotateDuration: {
-                type: Number,
-                attribute: "button-rotate-duration"
-            },
-            action1RotateDuration: {
-                type: Number,
-                attribute: "action1-rotate-duration"
-            },
-            action2RotateDuration: {
-                type: Number,
-                attribute: "action2-rotate-duration"
-            },
-            action3RotateDuration: {
-                type: Number,
-                attribute: "action3-rotate-duration"
-            },
-            action4RotateDuration: {
-                type: Number,
-                attribute: "action4-rotate-duration"
-            },
-            // viewBox (String)
-            buttonViewBox: {
-                type: String,
-                attribute: "button-viewbox"
-            },
-            action1ViewBox: {
-                type: String,
-                attribute: "action1-viewbox"
-            },
-            action2ViewBox: {
-                type: String,
-                attribute: "action2-viewbox"
-            },
-            action3ViewBox: {
-                type: String,
-                attribute: "action3-viewbox"
-            },
-            action4ViewBox: {
-                type: String,
-                attribute: "action4-viewbox"
-            }
-        };
-    }
-    constructor(){
-        super();
-        this.name = "action-button";
-        // Hide
-        this.buttonHide = false;
-        this.action1Hide = false;
-        this.action2Hide = false;
-        this.action3Hide = false;
-        this.action4Hide = false;
-        // Background color
-        this.buttonBackgroundColor = "var(--primary-color)";
-        this.action1BackgroundColor = "var(--primary-color)";
-        this.action2BackgroundColor = "var(--primary-color)";
-        this.action3BackgroundColor = "var(--primary-color)";
-        this.action4BackgroundColor = "var(--primary-color)";
-        // Fill
-        this.buttonFill = "white";
-        this.action1Fill = "white";
-        this.action2Fill = "white";
-        this.action3Fill = "white";
-        this.action4Fill = "white";
-        // Rotate
-        this.buttonRotate = false;
-        this.action1Rotate = false;
-        this.action2Rotate = false;
-        this.action3Rotate = false;
-        this.action4Rotate = false;
-        // Rotate Duration
-        this.buttonRotateDuration = 2;
-        this.action1RotateDuration = 2;
-        this.action2RotateDuration = 2;
-        this.action3RotateDuration = 2;
-        this.action4RotateDuration = 2;
-        // viewBox
-        this.buttonViewBox = "0 0 24 24";
-        this.action1ViewBox = "0 0 24 24";
-        this.action2ViewBox = "0 0 24 24";
-        this.action3ViewBox = "0 0 24 24";
-        this.action4ViewBox = "0 0 24 24";
-    }
-    static styles = (0, $def2de46b9306e8a$export$dbf350e5966cf602)`
-    .container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-    action-icon {
-      width: 100%;
-      height: 100%;
-    }
-    .action {
-      width: 2.5em;
-      height: 2.5em;
-
-      position: absolute;
-    }
-    .action.top-right {
-      top: 1em;
-      right: 1em;
-    }
-    .action.top-left {
-      top: 1em;
-      left: 1em;
-    }
-    .action.bottom-right {
-      bottom: 1em;
-      right: 1em;
-    }
-    .action.bottom-left {
-      bottom: 1em;
-      left: 1em;
-    }
-  `;
-    render() {
-        return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
-      <div class="container">
-        <long-press event-prefix="${this.name}-button">
-          <slot name="custom-button"
-            ><action-icon
-              class="main"
-              mdi-icon="${this.buttonIcon}"
-              background-color="${this.buttonBackgroundColor}"
-              fill="${this.buttonFill}"
-              ?rotate="${this.buttonRotate}"
-              rotate-duration="${this.buttonRotateDuration}"
-              viewbox="${this.buttonViewBox}"
-            ></action-icon
-          ></slot>
-        </long-press>
-        <div class="action top-right">
-          <action-icon
-            ?hide="${this.action1Hide}"
-            mdi-icon="${this.action1Icon}"
-            background-color="${this.action1BackgroundColor}"
-            fill="${this.action1Fill}"
-            scale="80"
-            ?rotate="${this.action1Rotate}"
-            rotate-duration="${this.action1RotateDuration}"
-            viewbox="${this.action1ViewBox}"
-          ></action-icon>
-        </div>
-        <div class="action top-left">
-          <action-icon
-            ?hide="${this.action2Hide}"
-            mdi-icon="${this.action2Icon}"
-            background-color="${this.action2BackgroundColor}"
-            fill="${this.action2Fill}"
-            scale="80"
-            ?rotate="${this.action2Rotate}"
-            rotate-duration="${this.action2RotateDuration}"
-            viewbox="${this.action2ViewBox}"
-          ></action-icon>
-        </div>
-        <div class="action bottom-right">
-          <action-icon
-            ?hide="${this.action3Hide}"
-            mdi-icon="${this.action3Icon}"
-            background-color="${this.action3BackgroundColor}"
-            fill="${this.action3Fill}"
-            scale="80"
-            ?rotate="${this.action3Rotate}"
-            rotate-duration="${this.action3RotateDuration}"
-            viewbox="${this.action3ViewBox}"
-          ></action-icon>
-        </div>
-        <div class="action bottom-left">
-          <action-icon
-            ?hide="${this.action4Hide}"
-            mdi-icon="${this.action4Icon}"
-            background-color="${this.action4BackgroundColor}"
-            fill="${this.action4Fill}"
-            scale="80"
-            ?rotate="${this.action4Rotate}"
-            rotate-duration="${this.action4RotateDuration}"
-            viewbox="${this.action4ViewBox}"
-          ></action-icon>
-        </div>
-      </div>
-    `;
-    }
-}
-
-
-
 class $534a35d36a5898d2$export$c46c8bbe9c971a80 extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
     static get properties() {
         return {
@@ -9282,90 +9371,6 @@ class $534a35d36a5898d2$export$c46c8bbe9c971a80 extends (0, $ab210b2da7b39b9d$ex
         </div>
       </div>
     `;
-    }
-}
-
-
-
-class $ed3e10bc7420bb45$export$abc17b74d3a8ecae extends PointerEvent {
-    #startTimeStamp;
-    get startTimeStamp() {
-        return this.#startTimeStamp;
-    }
-    constructor(eventName, init){
-        super(eventName, {
-            ...init,
-            bubbles: true,
-            composed: true
-        });
-        this.#startTimeStamp = init.startTimeStamp;
-    }
-}
-const $ed3e10bc7420bb45$var$DEFAULT_LONG_PRESS_DELAY = 500;
-class $ed3e10bc7420bb45$export$6ca9e64bec031b7e extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
-    static properties = {
-        delay: {
-            type: Number
-        },
-        eventPrefix: {
-            type: String,
-            attribute: "event-prefix"
-        }
-    };
-    /**
-   * The delay for waiting for long press
-   */ delay = $ed3e10bc7420bb45$var$DEFAULT_LONG_PRESS_DELAY;
-    eventPrefix = "default";
-    connectedCallback() {
-        // console.log("long-press-element: connectedCallback() called.");
-        super.connectedCallback();
-        this.addEventListener("pointerdown", this.#pointerDownHandler);
-        this.addEventListener("pointerup", this.#longPressAbortHandler);
-        this.addEventListener("pointerleave", this.#longPressAbortHandler);
-    }
-    disconnectedCallback() {
-        // console.log("long-press-element: disconnectedCallback() called.");
-        super.disconnectedCallback();
-        this.removeEventListener("pointerdown", this.#pointerDownHandler);
-        this.removeEventListener("pointerup", this.#longPressAbortHandler);
-        this.removeEventListener("pointerleave", this.#longPressAbortHandler);
-    }
-    render() {
-        // console.log("long-press-element: render() called.");
-        return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<slot></slot>`;
-    }
-    #pointerDownTimeout = {};
-    #pointerDownHandler(event) {
-        const { target: target , pointerId: pointerId  } = event;
-        const init = {
-            ...event,
-            startTimeStamp: event.timeStamp
-        };
-        this.#pointerDownTimeout[pointerId] = this.ownerDocument.defaultView.setTimeout(()=>{
-            delete this.#pointerDownTimeout[pointerId];
-            console.log("event:", `${this.eventPrefix}-long-press`);
-            const longPress = new $ed3e10bc7420bb45$export$abc17b74d3a8ecae(`${this.eventPrefix}-long-press`, init);
-            target.dispatchEvent(longPress);
-        }, this.delay || $ed3e10bc7420bb45$var$DEFAULT_LONG_PRESS_DELAY);
-    }
-    #longPressAbortHandler(event) {
-        let pointerId = event.pointerId;
-        // console.log("long-press-element: #longPressAbortHandler() called.", event);
-        // If already timed out, this will do nothing
-        if (this.#pointerDownTimeout[pointerId]) {
-            console.log("event:", `${this.eventPrefix}-click`);
-            const longPress = new $ed3e10bc7420bb45$export$abc17b74d3a8ecae(`${this.eventPrefix}-click`, {
-                ...event,
-                startTimeStamp: event.timeStamp
-            });
-            event.target.dispatchEvent(longPress);
-            this.ownerDocument.defaultView.clearTimeout(this.#pointerDownTimeout[pointerId]);
-            delete this.#pointerDownTimeout[pointerId];
-        }
-    }
-    constructor(){
-        super();
-    // console.log("long-press-element: constructor() called.");
     }
 }
 
@@ -9590,8 +9595,8 @@ customElements.define("hot-tub-card", (0, $bf513b85805031e6$export$83525664c1777
 // Editor Card
 customElements.define("hot-tub-card-editor", (0, $fc7d6e547b6fcb14$export$ed00679c1f4531d5));
 // Tooling
-customElements.define("long-press", (0, $ed3e10bc7420bb45$export$6ca9e64bec031b7e));
-customElements.define("action-button", (0, $6883c1461fed9e4e$export$cfc7921d29ef7b80));
+customElements.define("long-press", (0, $0e09245fe9f9b9b2$export$6ca9e64bec031b7e));
+customElements.define("action-button", (0, $cb6340c6977e7b78$export$cfc7921d29ef7b80));
 // Components
 customElements.define("hot-tub-icon", (0, $df774762052b2d8a$export$16e5ac37e5bee1fc));
 customElements.define("blower-button", (0, $e46106877f0a0dd4$export$13ee1d2285084470));
