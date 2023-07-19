@@ -9291,12 +9291,12 @@ class $e46106877f0a0dd4$export$13ee1d2285084470 extends (0, $ab210b2da7b39b9d$ex
       flex-wrap: wrap;
       align-content: center;
       justify-content: center;
-      outline: 0.2em solid white;
+      outline: 0.2em solid var(--primary-text-color);
       width: 60%;
       height: 60%;
       border-radius: 50%;
       background-color: var(--primary-color);
-      color: white;
+      color: var(--primary-text-color);
     }
     @keyframes bubble {
       0% {
@@ -9323,7 +9323,7 @@ class $e46106877f0a0dd4$export$13ee1d2285084470 extends (0, $ab210b2da7b39b9d$ex
       height: 1em;
       width: 1em;
       border-radius: 50px;
-      background-color: white;
+      background-color: var(--primary-text-color);
     }
 
     /* FRST BUBBLE */
@@ -9397,12 +9397,12 @@ class $534a35d36a5898d2$export$c46c8bbe9c971a80 extends (0, $ab210b2da7b39b9d$ex
       flex-wrap: wrap;
       align-content: center;
       justify-content: center;
-      outline: 0.2em solid white;
+      outline: 0.2em solid var(--primary-text-color);
       width: 60%;
       height: 60%;
       border-radius: 50%;
       background-color: var(--primary-color);
-      color: white;
+      color: var(--primary-text-color);
     }
     .text {
       font-size: 2.5em;

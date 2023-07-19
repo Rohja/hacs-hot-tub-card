@@ -20,12 +20,12 @@ export class TemperatureValueButton extends LitElement {
       flex-wrap: wrap;
       align-content: center;
       justify-content: center;
-      outline: 0.2em solid white;
+      outline: 0.2em solid var(--primary-text-color);
       width: 60%;
       height: 60%;
       border-radius: 50%;
       background-color: var(--primary-color);
-      color: white;
+      color: var(--primary-text-color);
     }
     .text {
       font-size: 2.5em;
