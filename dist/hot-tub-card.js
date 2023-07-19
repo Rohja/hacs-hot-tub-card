@@ -8691,27 +8691,64 @@ class $cb6340c6977e7b78$export$cfc7921d29ef7b80 extends (0, $ab210b2da7b39b9d$ex
       width: 100%;
       height: 100%;
     }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20% 20%;
+      grid-template-areas:
+        "action1 action2"
+        "action3 action4";
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .action1 {
+      grid-area: action1;
+
+      position: relative;
+    }
+    .action2 {
+      grid-area: action2;
+
+      position: relative;
+    }
+    .action3 {
+      grid-area: action3;
+
+      position: relative;
+    }
+    .action4 {
+      grid-area: action4;
+
+      position: relative;
+    }
+
     .action {
-      width: 2.5em;
-      height: 2.5em;
+      width: 80%;
+      height: 80%;
 
       position: absolute;
     }
     .action.top-right {
-      top: 1em;
-      right: 1em;
+      bottom: 0;
+      left: 0;
     }
     .action.top-left {
-      top: 1em;
-      left: 1em;
+      bottom: 0;
+      right: 0;
     }
     .action.bottom-right {
-      bottom: 1em;
-      right: 1em;
+      top: 0;
+      left: 0;
     }
     .action.bottom-left {
-      bottom: 1em;
-      left: 1em;
+      top: 0;
+      right: 0;
     }
   `;
     render() {
@@ -8730,53 +8767,63 @@ class $cb6340c6977e7b78$export$cfc7921d29ef7b80 extends (0, $ab210b2da7b39b9d$ex
             ></action-icon
           ></slot>
         </long-press>
-        <div class="action top-right">
-          <action-icon
-            ?hide="${this.action1Hide}"
-            mdi-icon="${this.action1Icon}"
-            background-color="${this.action1BackgroundColor}"
-            fill="${this.action1Fill}"
-            scale="80"
-            ?rotate="${this.action1Rotate}"
-            rotate-duration="${this.action1RotateDuration}"
-            viewbox="${this.action1ViewBox}"
-          ></action-icon>
-        </div>
-        <div class="action top-left">
-          <action-icon
-            ?hide="${this.action2Hide}"
-            mdi-icon="${this.action2Icon}"
-            background-color="${this.action2BackgroundColor}"
-            fill="${this.action2Fill}"
-            scale="80"
-            ?rotate="${this.action2Rotate}"
-            rotate-duration="${this.action2RotateDuration}"
-            viewbox="${this.action2ViewBox}"
-          ></action-icon>
-        </div>
-        <div class="action bottom-right">
-          <action-icon
-            ?hide="${this.action3Hide}"
-            mdi-icon="${this.action3Icon}"
-            background-color="${this.action3BackgroundColor}"
-            fill="${this.action3Fill}"
-            scale="80"
-            ?rotate="${this.action3Rotate}"
-            rotate-duration="${this.action3RotateDuration}"
-            viewbox="${this.action3ViewBox}"
-          ></action-icon>
-        </div>
-        <div class="action bottom-left">
-          <action-icon
-            ?hide="${this.action4Hide}"
-            mdi-icon="${this.action4Icon}"
-            background-color="${this.action4BackgroundColor}"
-            fill="${this.action4Fill}"
-            scale="80"
-            ?rotate="${this.action4Rotate}"
-            rotate-duration="${this.action4RotateDuration}"
-            viewbox="${this.action4ViewBox}"
-          ></action-icon>
+        <div class="action-grid">
+          <div class="action1">
+            <div class="action top-left">
+              <action-icon
+                ?hide="${this.action1Hide}"
+                mdi-icon="${this.action1Icon}"
+                background-color="${this.action1BackgroundColor}"
+                fill="${this.action1Fill}"
+                scale="80"
+                ?rotate="${this.action1Rotate}"
+                rotate-duration="${this.action1RotateDuration}"
+                viewbox="${this.action1ViewBox}"
+              ></action-icon>
+            </div>
+          </div>
+          <div class="action2">
+            <div class="action top-right">
+              <action-icon
+                ?hide="${this.action2Hide}"
+                mdi-icon="${this.action2Icon}"
+                background-color="${this.action2BackgroundColor}"
+                fill="${this.action2Fill}"
+                scale="80"
+                ?rotate="${this.action2Rotate}"
+                rotate-duration="${this.action2RotateDuration}"
+                viewbox="${this.action2ViewBox}"
+              ></action-icon>
+            </div>
+          </div>
+          <div class="action3">
+            <div class="action bottom-left">
+              <action-icon
+                ?hide="${this.action3Hide}"
+                mdi-icon="${this.action3Icon}"
+                background-color="${this.action3BackgroundColor}"
+                fill="${this.action3Fill}"
+                scale="80"
+                ?rotate="${this.action3Rotate}"
+                rotate-duration="${this.action3RotateDuration}"
+                viewbox="${this.action3ViewBox}"
+              ></action-icon>
+            </div>
+          </div>
+          <div class="action4">
+            <div class="action bottom-right">
+              <action-icon
+                ?hide="${this.action4Hide}"
+                mdi-icon="${this.action4Icon}"
+                background-color="${this.action4BackgroundColor}"
+                fill="${this.action4Fill}"
+                scale="80"
+                ?rotate="${this.action4Rotate}"
+                rotate-duration="${this.action4RotateDuration}"
+                viewbox="${this.action4ViewBox}"
+              ></action-icon>
+            </div>
+          </div>
         </div>
       </div>
     `;
