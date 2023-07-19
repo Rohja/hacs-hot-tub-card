@@ -47,4 +47,5 @@ filter2_entity: binary_sensor.bwa_link_filter_cycle_2_running
 - [ ] Better documentation
 - [ ] Customize colors from YAML
 - [ ] More flexible settings
+- [ ] Installation "How to" with HACS
 - [ ] Something else ??
